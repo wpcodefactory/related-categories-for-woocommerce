@@ -3,12 +3,12 @@
 Plugin Name: Related Categories for WooCommerce
 Plugin URI: https://wpfactory.com/item/related-categories-for-woocommerce/
 Description: Add "Related categories" section to single product and/or shop pages in WooCommerce.
-Version: 1.9.3
+Version: 1.9.4
 Author: WPFactory
 Author URI: https://wpfactory.com
 Text Domain: related-categories-for-woocommerce
 Domain Path: /langs
-WC tested up to: 7.1
+WC tested up to: 7.8
 */
 
 defined( 'ABSPATH' ) || exit;
