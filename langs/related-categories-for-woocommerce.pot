@@ -392,11 +392,11 @@ msgstr ""
 msgid "Archives"
 msgstr ""
 
-#: includes/class-alg-wc-related-categories.php:130
+#: includes/class-alg-wc-related-categories.php:147
 msgid "Settings"
 msgstr ""
 
-#: includes/class-alg-wc-related-categories.php:133
+#: includes/class-alg-wc-related-categories.php:150
 msgid "Go Pro"
 msgstr ""
 

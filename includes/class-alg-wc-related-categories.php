@@ -2,7 +2,7 @@
 /**
  * Related Categories for WooCommerce - Main Class
  *
- * @version 1.9.0
+ * @version 1.9.5
  * @since   1.0.0
  *
  * @author  Algoritmika Ltd
@@ -49,7 +49,7 @@ final class Alg_WC_Related_Categories {
 	/**
 	 * Alg_WC_Related_Categories Constructor.
 	 *
-	 * @version 1.9.0
+	 * @version 1.9.5
 	 * @since   1.0.0
 	 *
 	 * @access  public
@@ -63,6 +63,9 @@ final class Alg_WC_Related_Categories {
 
 		// Set up localisation
 		add_action( 'init', array( $this, 'localize' ) );
+
+		// Declare compatibility with custom order tables for WooCommerce
+		add_action( 'before_woocommerce_init', array( $this, 'wc_declare_compatibility' ) );
 
 		// Pro
 		if ( 'related-categories-for-woocommerce-pro.php' === basename( ALG_WC_RELATED_CATEGORIES_FILE ) ) {
@@ -87,6 +90,20 @@ final class Alg_WC_Related_Categories {
 	 */
 	function localize() {
 		load_plugin_textdomain( 'related-categories-for-woocommerce', false, dirname( plugin_basename( ALG_WC_RELATED_CATEGORIES_FILE ) ) . '/langs/' );
+	}
+
+	/**
+	 * wc_declare_compatibility.
+	 *
+	 * @version 1.9.5
+	 * @since   1.9.5
+	 *
+	 * @see     https://github.com/woocommerce/woocommerce/wiki/High-Performance-Order-Storage-Upgrade-Recipe-Book#declaring-extension-incompatibility
+	 */
+	function wc_declare_compatibility() {
+		if ( class_exists( '\Automattic\WooCommerce\Utilities\FeaturesUtil' ) ) {
+			\Automattic\WooCommerce\Utilities\FeaturesUtil::declare_compatibility( 'custom_order_tables', ALG_WC_RELATED_CATEGORIES_FILE, true );
+		}
 	}
 
 	/**
