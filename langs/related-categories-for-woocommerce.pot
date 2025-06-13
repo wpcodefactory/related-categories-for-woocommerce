@@ -1,17 +1,17 @@
-# Copyright (C) 2024 WPFactory
+# Copyright (C) 2025 WPFactory
 # This file is distributed under the same license as the Related Categories for WooCommerce Pro plugin.
 msgid ""
 msgstr ""
-"Project-Id-Version: related-categories-for-woocommerce 1.9.7\n"
+"Project-Id-Version: related-categories-for-woocommerce 1.9.8\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/related-categories-for-woocommerce\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2024-07-31T07:52:18+02:00\n"
+"POT-Creation-Date: 2025-06-14T00:05:27+02:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"X-Generator: WP-CLI 2.9.0\n"
+"X-Generator: WP-CLI 2.7.1\n"
 "X-Domain: related-categories-for-woocommerce\n"
 
 #. Plugin Name of the plugin
@@ -34,11 +34,11 @@ msgstr ""
 msgid "https://wpfactory.com"
 msgstr ""
 
-#: includes/class-alg-wc-related-categories-core.php:66
-#: includes/class-alg-wc-related-categories-core.php:100
+#: includes/class-alg-wc-related-categories-core.php:96
+#: includes/class-alg-wc-related-categories-core.php:130
 #: includes/pro/settings/class-alg-wc-related-categories-settings-per-product.php:36
 #: includes/pro/settings/class-alg-wc-related-categories-settings-per-taxonomy.php:53
-#: includes/settings/class-alg-wc-related-categories-settings-general.php:467
+#: includes/settings/class-alg-wc-related-categories-settings-general.php:495
 msgid "Related categories"
 msgstr ""
 
@@ -51,8 +51,9 @@ msgid "A list of related categories."
 msgstr ""
 
 #: includes/class-alg-wc-related-categories-widget.php:28
-#: includes/settings/class-alg-wc-related-categories-settings-general.php:407
-#: includes/settings/class-alg-wc-related-categories-settings.php:25
+#: includes/class-alg-wc-related-categories.php:142
+#: includes/settings/class-alg-wc-related-categories-settings-general.php:435
+#: includes/settings/class-alg-wc-related-categories-settings.php:32
 msgid "Related Categories"
 msgstr ""
 
@@ -61,22 +62,22 @@ msgid "Title"
 msgstr ""
 
 #: includes/class-alg-wc-related-categories-widget.php:119
-#: includes/settings/class-alg-wc-related-categories-settings-general.php:77
+#: includes/settings/class-alg-wc-related-categories-settings-general.php:105
 msgid "Limit"
 msgstr ""
 
 #: includes/class-alg-wc-related-categories-widget.php:120
-#: includes/settings/class-alg-wc-related-categories-settings-general.php:78
+#: includes/settings/class-alg-wc-related-categories-settings-general.php:106
 msgid "The number of categories to display."
 msgstr ""
 
 #: includes/class-alg-wc-related-categories-widget.php:126
-#: includes/settings/class-alg-wc-related-categories-settings-general.php:85
+#: includes/settings/class-alg-wc-related-categories-settings-general.php:113
 msgid "Columns"
 msgstr ""
 
 #: includes/class-alg-wc-related-categories-widget.php:127
-#: includes/settings/class-alg-wc-related-categories-settings-general.php:86
+#: includes/settings/class-alg-wc-related-categories-settings-general.php:114
 msgid "The number of columns to display."
 msgstr ""
 
@@ -90,12 +91,12 @@ msgid "Template"
 msgstr ""
 
 #: includes/class-alg-wc-related-categories-widget.php:136
-#: includes/settings/class-alg-wc-related-categories-settings-general.php:93
+#: includes/settings/class-alg-wc-related-categories-settings-general.php:121
 msgid "Hide empty"
 msgstr ""
 
 #: includes/class-alg-wc-related-categories-widget.php:137
-#: includes/settings/class-alg-wc-related-categories-settings-general.php:95
+#: includes/settings/class-alg-wc-related-categories-settings-general.php:123
 msgid "Hide/show empty categories."
 msgstr ""
 
@@ -140,12 +141,12 @@ msgid "No"
 msgstr ""
 
 #: includes/class-alg-wc-related-categories-widget.php:146
-#: includes/settings/class-alg-wc-related-categories-settings-general.php:101
+#: includes/settings/class-alg-wc-related-categories-settings-general.php:129
 msgid "Order by"
 msgstr ""
 
 #: includes/class-alg-wc-related-categories-widget.php:147
-#: includes/settings/class-alg-wc-related-categories-settings-general.php:102
+#: includes/settings/class-alg-wc-related-categories-settings-general.php:130
 msgid "If you want to order by the ids you specified then you can use \"None\"."
 msgstr ""
 
@@ -154,87 +155,87 @@ msgid "\"Count\" option will sort categories as when sorted by \"Count\" column 
 msgstr ""
 
 #: includes/class-alg-wc-related-categories-widget.php:150
-#: includes/settings/class-alg-wc-related-categories-settings-general.php:105
+#: includes/settings/class-alg-wc-related-categories-settings-general.php:133
 msgid "Products > Categories"
 msgstr ""
 
 #: includes/class-alg-wc-related-categories-widget.php:155
-#: includes/settings/class-alg-wc-related-categories-settings-general.php:112
+#: includes/settings/class-alg-wc-related-categories-settings-general.php:140
 msgid "Name"
 msgstr ""
 
 #: includes/class-alg-wc-related-categories-widget.php:156
-#: includes/settings/class-alg-wc-related-categories-settings-general.php:113
+#: includes/settings/class-alg-wc-related-categories-settings-general.php:141
 msgid "ID"
 msgstr ""
 
 #: includes/class-alg-wc-related-categories-widget.php:157
-#: includes/settings/class-alg-wc-related-categories-settings-general.php:114
+#: includes/settings/class-alg-wc-related-categories-settings-general.php:142
 msgid "Slug"
 msgstr ""
 
 #: includes/class-alg-wc-related-categories-widget.php:158
-#: includes/settings/class-alg-wc-related-categories-settings-general.php:115
+#: includes/settings/class-alg-wc-related-categories-settings-general.php:143
 msgid "Menu order"
 msgstr ""
 
 #: includes/class-alg-wc-related-categories-widget.php:159
-#: includes/settings/class-alg-wc-related-categories-settings-general.php:116
+#: includes/settings/class-alg-wc-related-categories-settings-general.php:144
 msgid "None"
 msgstr ""
 
 #: includes/class-alg-wc-related-categories-widget.php:160
-#: includes/settings/class-alg-wc-related-categories-settings-general.php:117
+#: includes/settings/class-alg-wc-related-categories-settings-general.php:145
 msgid "Random"
 msgstr ""
 
 #: includes/class-alg-wc-related-categories-widget.php:161
-#: includes/settings/class-alg-wc-related-categories-settings-general.php:118
+#: includes/settings/class-alg-wc-related-categories-settings-general.php:146
 msgid "Count"
 msgstr ""
 
 #: includes/class-alg-wc-related-categories-widget.php:165
-#: includes/settings/class-alg-wc-related-categories-settings-general.php:122
+#: includes/settings/class-alg-wc-related-categories-settings-general.php:150
 msgid "Order"
 msgstr ""
 
 #: includes/class-alg-wc-related-categories-widget.php:166
-#: includes/settings/class-alg-wc-related-categories-settings-general.php:123
+#: includes/settings/class-alg-wc-related-categories-settings-general.php:151
 msgid "States whether the category ordering is ascending or descending, using the method set in \"Order by\"."
 msgstr ""
 
 #: includes/class-alg-wc-related-categories-widget.php:170
-#: includes/settings/class-alg-wc-related-categories-settings-general.php:129
+#: includes/settings/class-alg-wc-related-categories-settings-general.php:157
 msgid "Ascending"
 msgstr ""
 
 #: includes/class-alg-wc-related-categories-widget.php:171
-#: includes/settings/class-alg-wc-related-categories-settings-general.php:130
+#: includes/settings/class-alg-wc-related-categories-settings-general.php:158
 msgid "Descending"
 msgstr ""
 
 #: includes/class-alg-wc-related-categories-widget.php:178
-#: includes/settings/class-alg-wc-related-categories-settings-general.php:595
+#: includes/settings/class-alg-wc-related-categories-settings-general.php:623
 msgid "Visibility"
 msgstr ""
 
 #: includes/class-alg-wc-related-categories-widget.php:182
-#: includes/settings/class-alg-wc-related-categories-settings-general.php:601
+#: includes/settings/class-alg-wc-related-categories-settings-general.php:629
 msgid "Show for all categories"
 msgstr ""
 
 #: includes/class-alg-wc-related-categories-widget.php:183
-#: includes/settings/class-alg-wc-related-categories-settings-general.php:602
+#: includes/settings/class-alg-wc-related-categories-settings-general.php:630
 msgid "Show for categories with children only"
 msgstr ""
 
 #: includes/class-alg-wc-related-categories-widget.php:184
-#: includes/settings/class-alg-wc-related-categories-settings-general.php:603
+#: includes/settings/class-alg-wc-related-categories-settings-general.php:631
 msgid "Show for categories with no children only"
 msgstr ""
 
 #: includes/class-alg-wc-related-categories-widget.php:193
-#: includes/settings/class-alg-wc-related-categories-settings-general.php:157
+#: includes/settings/class-alg-wc-related-categories-settings-general.php:185
 msgid "Relate Options"
 msgstr ""
 
@@ -242,150 +243,150 @@ msgstr ""
 #: includes/class-alg-wc-related-categories-widget.php:207
 #: includes/class-alg-wc-related-categories-widget.php:217
 #: includes/class-alg-wc-related-categories-widget.php:227
-#: includes/settings/class-alg-wc-related-categories-settings-general.php:162
+#: includes/settings/class-alg-wc-related-categories-settings-general.php:190
 msgid "Siblings"
 msgstr ""
 
 #: includes/class-alg-wc-related-categories-widget.php:198
-#: includes/settings/class-alg-wc-related-categories-settings-general.php:164
+#: includes/settings/class-alg-wc-related-categories-settings-general.php:192
 msgid "Enable this if you would like to display all categories with the same parents (i.e. siblings)."
 msgstr ""
 
 #: includes/class-alg-wc-related-categories-widget.php:207
 #: includes/class-alg-wc-related-categories-widget.php:247
-#: includes/settings/class-alg-wc-related-categories-settings-general.php:172
-#: includes/settings/class-alg-wc-related-categories-settings-general.php:209
+#: includes/settings/class-alg-wc-related-categories-settings-general.php:200
+#: includes/settings/class-alg-wc-related-categories-settings-general.php:237
 msgid "Include grandparents"
 msgstr ""
 
 #: includes/class-alg-wc-related-categories-widget.php:208
-#: includes/settings/class-alg-wc-related-categories-settings-general.php:173
+#: includes/settings/class-alg-wc-related-categories-settings-general.php:201
 msgid "Enable this if you would like to include category grandparents' children as well."
 msgstr ""
 
 #: includes/class-alg-wc-related-categories-widget.php:217
-#: includes/settings/class-alg-wc-related-categories-settings-general.php:181
+#: includes/settings/class-alg-wc-related-categories-settings-general.php:209
 msgid "Include top-level"
 msgstr ""
 
 #: includes/class-alg-wc-related-categories-widget.php:218
-#: includes/settings/class-alg-wc-related-categories-settings-general.php:182
+#: includes/settings/class-alg-wc-related-categories-settings-general.php:210
 msgid "Enable this if you would like to include top-level (i.e. zero) category in (grand)parents."
 msgstr ""
 
 #: includes/class-alg-wc-related-categories-widget.php:227
 #: includes/class-alg-wc-related-categories-widget.php:267
-#: includes/settings/class-alg-wc-related-categories-settings-general.php:190
-#: includes/settings/class-alg-wc-related-categories-settings-general.php:228
+#: includes/settings/class-alg-wc-related-categories-settings-general.php:218
+#: includes/settings/class-alg-wc-related-categories-settings-general.php:256
 msgid "Include grandchildren"
 msgstr ""
 
 #: includes/class-alg-wc-related-categories-widget.php:228
-#: includes/settings/class-alg-wc-related-categories-settings-general.php:191
+#: includes/settings/class-alg-wc-related-categories-settings-general.php:219
 msgid "Enable this if you would like to include (grand)parents' grandchildren as well."
 msgstr ""
 
 #: includes/class-alg-wc-related-categories-widget.php:237
 #: includes/class-alg-wc-related-categories-widget.php:247
-#: includes/settings/class-alg-wc-related-categories-settings-general.php:199
+#: includes/settings/class-alg-wc-related-categories-settings-general.php:227
 msgid "Parents"
 msgstr ""
 
 #: includes/class-alg-wc-related-categories-widget.php:238
-#: includes/settings/class-alg-wc-related-categories-settings-general.php:201
+#: includes/settings/class-alg-wc-related-categories-settings-general.php:229
 msgid "Enable this if you would like to display all the parent categories."
 msgstr ""
 
 #: includes/class-alg-wc-related-categories-widget.php:248
-#: includes/settings/class-alg-wc-related-categories-settings-general.php:210
+#: includes/settings/class-alg-wc-related-categories-settings-general.php:238
 msgid "Enable this if you would like to include category grandparents as well. If disabled will always show single parent category only."
 msgstr ""
 
 #: includes/class-alg-wc-related-categories-widget.php:257
 #: includes/class-alg-wc-related-categories-widget.php:267
-#: includes/settings/class-alg-wc-related-categories-settings-general.php:218
+#: includes/settings/class-alg-wc-related-categories-settings-general.php:246
 msgid "Children"
 msgstr ""
 
 #: includes/class-alg-wc-related-categories-widget.php:258
-#: includes/settings/class-alg-wc-related-categories-settings-general.php:220
+#: includes/settings/class-alg-wc-related-categories-settings-general.php:248
 msgid "Enable this if you would like to display all the child categories."
 msgstr ""
 
 #: includes/class-alg-wc-related-categories-widget.php:268
-#: includes/settings/class-alg-wc-related-categories-settings-general.php:229
+#: includes/settings/class-alg-wc-related-categories-settings-general.php:257
 msgid "Enable this if you would like to include category grandchildren as well."
 msgstr ""
 
 #: includes/class-alg-wc-related-categories-widget.php:277
 #: includes/class-alg-wc-related-categories-widget.php:292
-#: includes/settings/class-alg-wc-related-categories-settings-general.php:237
+#: includes/settings/class-alg-wc-related-categories-settings-general.php:265
 msgid "Current"
 msgstr ""
 
 #: includes/class-alg-wc-related-categories-widget.php:279
-#: includes/settings/class-alg-wc-related-categories-settings-general.php:152
+#: includes/settings/class-alg-wc-related-categories-settings-general.php:180
 msgid "Enable this if you would like to display all the current categories."
 msgstr ""
 
 #: includes/class-alg-wc-related-categories-widget.php:280
-#: includes/settings/class-alg-wc-related-categories-settings-general.php:153
+#: includes/settings/class-alg-wc-related-categories-settings-general.php:181
 msgid "Enable this if you would like to display the current category."
 msgstr ""
 
 #: includes/class-alg-wc-related-categories-widget.php:292
-#: includes/settings/class-alg-wc-related-categories-settings-general.php:250
+#: includes/settings/class-alg-wc-related-categories-settings-general.php:278
 msgid "Always show first"
 msgstr ""
 
 #: includes/class-alg-wc-related-categories-widget.php:305
-#: includes/settings/class-alg-wc-related-categories-settings-advanced.php:49
-#: includes/settings/class-alg-wc-related-categories-settings-general.php:276
+#: includes/settings/class-alg-wc-related-categories-settings-advanced.php:65
+#: includes/settings/class-alg-wc-related-categories-settings-general.php:304
 msgid "Per category"
 msgstr ""
 
 #: includes/class-alg-wc-related-categories-widget.php:318
-#: includes/settings/class-alg-wc-related-categories-settings-advanced.php:50
-#: includes/settings/class-alg-wc-related-categories-settings-general.php:288
+#: includes/settings/class-alg-wc-related-categories-settings-advanced.php:66
+#: includes/settings/class-alg-wc-related-categories-settings-general.php:316
 msgid "Per tag"
 msgstr ""
 
 #: includes/class-alg-wc-related-categories-widget.php:331
-#: includes/settings/class-alg-wc-related-categories-settings-advanced.php:51
-#: includes/settings/class-alg-wc-related-categories-settings-general.php:300
+#: includes/settings/class-alg-wc-related-categories-settings-advanced.php:67
+#: includes/settings/class-alg-wc-related-categories-settings-general.php:328
 msgid "Per custom taxonomy"
 msgstr ""
 
 #: includes/class-alg-wc-related-categories-widget.php:344
 #: includes/class-alg-wc-related-categories-widget.php:353
-#: includes/settings/class-alg-wc-related-categories-settings-advanced.php:52
-#: includes/settings/class-alg-wc-related-categories-settings-general.php:313
+#: includes/settings/class-alg-wc-related-categories-settings-advanced.php:68
+#: includes/settings/class-alg-wc-related-categories-settings-general.php:341
 msgid "Per product"
 msgstr ""
 
 #: includes/class-alg-wc-related-categories-widget.php:353
-#: includes/settings/class-alg-wc-related-categories-settings-general.php:327
+#: includes/settings/class-alg-wc-related-categories-settings-general.php:355
 msgid "Override"
 msgstr ""
 
 #: includes/class-alg-wc-related-categories-widget.php:354
-#: includes/settings/class-alg-wc-related-categories-settings-general.php:328
+#: includes/settings/class-alg-wc-related-categories-settings-general.php:356
 msgid "Choose if you want categories to be overridden by \"Per product\" settings or merged with them."
 msgstr ""
 
 #: includes/class-alg-wc-related-categories-widget.php:382
-#: includes/settings/class-alg-wc-related-categories-settings-general.php:458
-#: includes/settings/class-alg-wc-related-categories-settings-general.php:555
+#: includes/settings/class-alg-wc-related-categories-settings-general.php:486
+#: includes/settings/class-alg-wc-related-categories-settings-general.php:583
 msgid "Template Options"
 msgstr ""
 
 #: includes/class-alg-wc-related-categories-widget.php:386
-#: includes/settings/class-alg-wc-related-categories-settings-general.php:465
+#: includes/settings/class-alg-wc-related-categories-settings-general.php:493
 msgid "Header"
 msgstr ""
 
 #: includes/class-alg-wc-related-categories-widget.php:391
-#: includes/settings/class-alg-wc-related-categories-settings-general.php:472
+#: includes/settings/class-alg-wc-related-categories-settings-general.php:500
 msgid "Footer"
 msgstr ""
 
@@ -398,17 +399,21 @@ msgid "Glue"
 msgstr ""
 
 #: includes/class-alg-wc-related-categories-widget.php:492
-#: includes/settings/class-alg-wc-related-categories-settings-general.php:28
+#: includes/settings/class-alg-wc-related-categories-settings-general.php:56
 msgid "Single Product Page"
 msgstr ""
 
 #: includes/class-alg-wc-related-categories-widget.php:512
-#: includes/settings/class-alg-wc-related-categories-settings-general.php:27
-#: includes/settings/class-alg-wc-related-categories-settings-general.php:28
+#: includes/settings/class-alg-wc-related-categories-settings-general.php:55
+#: includes/settings/class-alg-wc-related-categories-settings-general.php:56
 msgid "Archives"
 msgstr ""
 
-#: includes/class-alg-wc-related-categories.php:150
+#: includes/class-alg-wc-related-categories.php:143
+msgid "Related Categories for WooCommerce"
+msgstr ""
+
+#: includes/class-alg-wc-related-categories.php:216
 msgid "Go Pro"
 msgstr ""
 
@@ -424,337 +429,337 @@ msgstr ""
 msgid "Categories"
 msgstr ""
 
-#: includes/settings/class-alg-wc-related-categories-settings-advanced.php:25
+#: includes/settings/class-alg-wc-related-categories-settings-advanced.php:41
 msgid "Advanced"
 msgstr ""
 
-#: includes/settings/class-alg-wc-related-categories-settings-advanced.php:41
-#: includes/settings/class-alg-wc-related-categories-settings-general.php:576
+#: includes/settings/class-alg-wc-related-categories-settings-advanced.php:57
+#: includes/settings/class-alg-wc-related-categories-settings-general.php:604
 msgid "Advanced Options"
 msgstr ""
 
-#: includes/settings/class-alg-wc-related-categories-settings-advanced.php:46
+#: includes/settings/class-alg-wc-related-categories-settings-advanced.php:62
 msgid "Multi-language"
 msgstr ""
 
-#: includes/settings/class-alg-wc-related-categories-settings-advanced.php:47
+#: includes/settings/class-alg-wc-related-categories-settings-advanced.php:63
 msgid "Use the default language product/term ID instead of the translated one."
 msgstr ""
 
-#: includes/settings/class-alg-wc-related-categories-settings-advanced.php:48
+#: includes/settings/class-alg-wc-related-categories-settings-advanced.php:64
 msgid "Affects \"%s\", \"%s\", \"%s\" and \"%s\" settings."
 msgstr ""
 
-#: includes/settings/class-alg-wc-related-categories-settings-advanced.php:59
+#: includes/settings/class-alg-wc-related-categories-settings-advanced.php:75
 msgid "Disabled"
 msgstr ""
 
-#: includes/settings/class-alg-wc-related-categories-settings-advanced.php:60
+#: includes/settings/class-alg-wc-related-categories-settings-advanced.php:76
 msgid "WPML"
 msgstr ""
 
-#: includes/settings/class-alg-wc-related-categories-settings-advanced.php:61
+#: includes/settings/class-alg-wc-related-categories-settings-advanced.php:77
 msgid "Polylang"
 msgstr ""
 
-#: includes/settings/class-alg-wc-related-categories-settings-advanced.php:65
+#: includes/settings/class-alg-wc-related-categories-settings-advanced.php:81
 msgid "Transients"
 msgstr ""
 
-#: includes/settings/class-alg-wc-related-categories-settings-advanced.php:66
-#: includes/settings/class-alg-wc-related-categories-settings-general.php:163
-#: includes/settings/class-alg-wc-related-categories-settings-general.php:200
-#: includes/settings/class-alg-wc-related-categories-settings-general.php:219
-#: includes/settings/class-alg-wc-related-categories-settings-general.php:238
-#: includes/settings/class-alg-wc-related-categories-settings-general.php:277
-#: includes/settings/class-alg-wc-related-categories-settings-general.php:289
-#: includes/settings/class-alg-wc-related-categories-settings-general.php:314
-#: includes/settings/class-alg-wc-related-categories-settings-general.php:409
+#: includes/settings/class-alg-wc-related-categories-settings-advanced.php:82
+#: includes/settings/class-alg-wc-related-categories-settings-general.php:191
+#: includes/settings/class-alg-wc-related-categories-settings-general.php:228
+#: includes/settings/class-alg-wc-related-categories-settings-general.php:247
+#: includes/settings/class-alg-wc-related-categories-settings-general.php:266
+#: includes/settings/class-alg-wc-related-categories-settings-general.php:305
+#: includes/settings/class-alg-wc-related-categories-settings-general.php:317
+#: includes/settings/class-alg-wc-related-categories-settings-general.php:342
+#: includes/settings/class-alg-wc-related-categories-settings-general.php:437
 msgid "Enable"
 msgstr ""
 
-#: includes/settings/class-alg-wc-related-categories-settings-advanced.php:67
+#: includes/settings/class-alg-wc-related-categories-settings-advanced.php:83
 msgid "Use transients to save the results."
 msgstr ""
 
-#: includes/settings/class-alg-wc-related-categories-settings-advanced.php:73
+#: includes/settings/class-alg-wc-related-categories-settings-advanced.php:89
 msgid "Transient expiration"
 msgstr ""
 
-#: includes/settings/class-alg-wc-related-categories-settings-advanced.php:74
+#: includes/settings/class-alg-wc-related-categories-settings-advanced.php:90
 msgid "Time until expiration in seconds. Set to 0 for no expiration."
 msgstr ""
 
-#: includes/settings/class-alg-wc-related-categories-settings-general.php:27
+#: includes/settings/class-alg-wc-related-categories-settings-general.php:55
 msgid "Single"
 msgstr ""
 
-#: includes/settings/class-alg-wc-related-categories-settings-general.php:65
+#: includes/settings/class-alg-wc-related-categories-settings-general.php:93
 msgid "%s Options"
 msgstr ""
 
-#: includes/settings/class-alg-wc-related-categories-settings-general.php:70
+#: includes/settings/class-alg-wc-related-categories-settings-general.php:98
 msgid "Display on %s"
 msgstr ""
 
-#: includes/settings/class-alg-wc-related-categories-settings-general.php:71
+#: includes/settings/class-alg-wc-related-categories-settings-general.php:99
 msgid "Enable section"
 msgstr ""
 
-#: includes/settings/class-alg-wc-related-categories-settings-general.php:94
-#: includes/settings/class-alg-wc-related-categories-settings-general.php:585
+#: includes/settings/class-alg-wc-related-categories-settings-general.php:122
+#: includes/settings/class-alg-wc-related-categories-settings-general.php:613
 msgid "Hide"
 msgstr ""
 
-#: includes/settings/class-alg-wc-related-categories-settings-general.php:103
+#: includes/settings/class-alg-wc-related-categories-settings-general.php:131
 msgid "\"Count\" option will sort categories as when sorted by the \"Count\" column in %s."
 msgstr ""
 
-#: includes/settings/class-alg-wc-related-categories-settings-general.php:251
+#: includes/settings/class-alg-wc-related-categories-settings-general.php:279
 msgid "Always show the current category in first position."
 msgstr ""
 
-#: includes/settings/class-alg-wc-related-categories-settings-general.php:252
+#: includes/settings/class-alg-wc-related-categories-settings-general.php:280
 msgid "Works for the \"%s\" template type only."
 msgstr ""
 
-#: includes/settings/class-alg-wc-related-categories-settings-general.php:253
-#: includes/settings/class-alg-wc-related-categories-settings-general.php:486
-#: includes/settings/class-alg-wc-related-categories-settings-general.php:492
+#: includes/settings/class-alg-wc-related-categories-settings-general.php:281
+#: includes/settings/class-alg-wc-related-categories-settings-general.php:514
+#: includes/settings/class-alg-wc-related-categories-settings-general.php:520
 msgid "Custom"
 msgstr ""
 
-#: includes/settings/class-alg-wc-related-categories-settings-general.php:268
+#: includes/settings/class-alg-wc-related-categories-settings-general.php:296
 msgid "Relate Manually"
 msgstr ""
 
-#: includes/settings/class-alg-wc-related-categories-settings-general.php:271
+#: includes/settings/class-alg-wc-related-categories-settings-general.php:299
 msgid "These options will allow you to set related categories <strong>manually</strong>."
 msgstr ""
 
-#: includes/settings/class-alg-wc-related-categories-settings-general.php:278
+#: includes/settings/class-alg-wc-related-categories-settings-general.php:306
 msgid "This option will allow you to set related categories manually for each category."
 msgstr ""
 
-#: includes/settings/class-alg-wc-related-categories-settings-general.php:279
+#: includes/settings/class-alg-wc-related-categories-settings-general.php:307
 msgid "It will add \"Related categories\" settings section to each category edit page (in %s)."
 msgstr ""
 
-#: includes/settings/class-alg-wc-related-categories-settings-general.php:281
+#: includes/settings/class-alg-wc-related-categories-settings-general.php:309
 msgid "Products > Categories > Edit category"
 msgstr ""
 
-#: includes/settings/class-alg-wc-related-categories-settings-general.php:290
+#: includes/settings/class-alg-wc-related-categories-settings-general.php:318
 msgid "This option will allow you to set related categories manually for each tag."
 msgstr ""
 
-#: includes/settings/class-alg-wc-related-categories-settings-general.php:291
+#: includes/settings/class-alg-wc-related-categories-settings-general.php:319
 msgid "It will add \"Related categories\" settings section to each tag edit page (in %s)."
 msgstr ""
 
-#: includes/settings/class-alg-wc-related-categories-settings-general.php:293
+#: includes/settings/class-alg-wc-related-categories-settings-general.php:321
 msgid "Products > Tags > Edit tag"
 msgstr ""
 
-#: includes/settings/class-alg-wc-related-categories-settings-general.php:301
+#: includes/settings/class-alg-wc-related-categories-settings-general.php:329
 msgid "This option will allow you to set related categories manually for each custom taxonomy."
 msgstr ""
 
-#: includes/settings/class-alg-wc-related-categories-settings-general.php:302
+#: includes/settings/class-alg-wc-related-categories-settings-general.php:330
 msgid "It will add \"Related categories\" settings section to each custom taxonomy edit page."
 msgstr ""
 
-#: includes/settings/class-alg-wc-related-categories-settings-general.php:303
+#: includes/settings/class-alg-wc-related-categories-settings-general.php:331
 msgid "Set as comma separated taxonomy slug list, e.g.: %s."
 msgstr ""
 
-#: includes/settings/class-alg-wc-related-categories-settings-general.php:315
+#: includes/settings/class-alg-wc-related-categories-settings-general.php:343
 msgid "This option will allow you to set related categories manually for each product."
 msgstr ""
 
-#: includes/settings/class-alg-wc-related-categories-settings-general.php:316
+#: includes/settings/class-alg-wc-related-categories-settings-general.php:344
 msgid "It will add \"Related categories\" meta box to each product edit page (in %s)."
 msgstr ""
 
-#: includes/settings/class-alg-wc-related-categories-settings-general.php:318
+#: includes/settings/class-alg-wc-related-categories-settings-general.php:346
 msgid "Products > Edit product"
 msgstr ""
 
-#: includes/settings/class-alg-wc-related-categories-settings-general.php:360
+#: includes/settings/class-alg-wc-related-categories-settings-general.php:388
 msgid "To place related categories section before the standard related products section, select \"After single product summary\" for \"Position\" and \"19\" for \"Position order\". To place it after the related products section, set \"21\" for \"Position order\"."
 msgstr ""
 
-#: includes/settings/class-alg-wc-related-categories-settings-general.php:365
+#: includes/settings/class-alg-wc-related-categories-settings-general.php:393
 msgid "Before single product"
 msgstr ""
 
-#: includes/settings/class-alg-wc-related-categories-settings-general.php:366
+#: includes/settings/class-alg-wc-related-categories-settings-general.php:394
 msgid "Before single product summary"
 msgstr ""
 
-#: includes/settings/class-alg-wc-related-categories-settings-general.php:367
+#: includes/settings/class-alg-wc-related-categories-settings-general.php:395
 msgid "Inside single product summary"
 msgstr ""
 
-#: includes/settings/class-alg-wc-related-categories-settings-general.php:368
+#: includes/settings/class-alg-wc-related-categories-settings-general.php:396
 msgid "After single product summary"
 msgstr ""
 
-#: includes/settings/class-alg-wc-related-categories-settings-general.php:369
+#: includes/settings/class-alg-wc-related-categories-settings-general.php:397
 msgid "After single product"
 msgstr ""
 
-#: includes/settings/class-alg-wc-related-categories-settings-general.php:370
-#: includes/settings/class-alg-wc-related-categories-settings-general.php:377
+#: includes/settings/class-alg-wc-related-categories-settings-general.php:398
+#: includes/settings/class-alg-wc-related-categories-settings-general.php:405
 msgid "Disable"
 msgstr ""
 
-#: includes/settings/class-alg-wc-related-categories-settings-general.php:373
+#: includes/settings/class-alg-wc-related-categories-settings-general.php:401
 msgid "Before main content"
 msgstr ""
 
-#: includes/settings/class-alg-wc-related-categories-settings-general.php:374
+#: includes/settings/class-alg-wc-related-categories-settings-general.php:402
 msgid "Before shop loop"
 msgstr ""
 
-#: includes/settings/class-alg-wc-related-categories-settings-general.php:375
+#: includes/settings/class-alg-wc-related-categories-settings-general.php:403
 msgid "After shop loop"
 msgstr ""
 
-#: includes/settings/class-alg-wc-related-categories-settings-general.php:376
+#: includes/settings/class-alg-wc-related-categories-settings-general.php:404
 msgid "After main content"
 msgstr ""
 
-#: includes/settings/class-alg-wc-related-categories-settings-general.php:382
+#: includes/settings/class-alg-wc-related-categories-settings-general.php:410
 msgid "Position Options"
 msgstr ""
 
-#: includes/settings/class-alg-wc-related-categories-settings-general.php:383
+#: includes/settings/class-alg-wc-related-categories-settings-general.php:411
 msgid "You can also use the %s shortcode to output the related categories."
 msgstr ""
 
-#: includes/settings/class-alg-wc-related-categories-settings-general.php:389
+#: includes/settings/class-alg-wc-related-categories-settings-general.php:417
 msgid "Position"
 msgstr ""
 
-#: includes/settings/class-alg-wc-related-categories-settings-general.php:390
+#: includes/settings/class-alg-wc-related-categories-settings-general.php:418
 msgid "\"Disable\" position can be set if you are going to use %s shortcode or widget instead."
 msgstr ""
 
-#: includes/settings/class-alg-wc-related-categories-settings-general.php:399
+#: includes/settings/class-alg-wc-related-categories-settings-general.php:427
 msgid "Position order (i.e. priority)"
 msgstr ""
 
-#: includes/settings/class-alg-wc-related-categories-settings-general.php:405
+#: includes/settings/class-alg-wc-related-categories-settings-general.php:433
 msgid "Widget"
 msgstr ""
 
-#: includes/settings/class-alg-wc-related-categories-settings-general.php:406
+#: includes/settings/class-alg-wc-related-categories-settings-general.php:434
 msgid "This will add \"%s\" widget to \"%s\"."
 msgstr ""
 
-#: includes/settings/class-alg-wc-related-categories-settings-general.php:408
+#: includes/settings/class-alg-wc-related-categories-settings-general.php:436
 msgid "Appearance > Widgets"
 msgstr ""
 
-#: includes/settings/class-alg-wc-related-categories-settings-general.php:417
+#: includes/settings/class-alg-wc-related-categories-settings-general.php:445
 msgid "Override \"Relate Options\" in widget settings"
 msgstr ""
 
-#: includes/settings/class-alg-wc-related-categories-settings-general.php:459
+#: includes/settings/class-alg-wc-related-categories-settings-general.php:487
 msgid "You can use HTML and/or shortcodes here, e.g. %s."
 msgstr ""
 
-#: includes/settings/class-alg-wc-related-categories-settings-general.php:479
-#: includes/settings/class-alg-wc-related-categories-settings-general.php:492
-#: includes/settings/class-alg-wc-related-categories-settings-general.php:555
+#: includes/settings/class-alg-wc-related-categories-settings-general.php:507
+#: includes/settings/class-alg-wc-related-categories-settings-general.php:520
+#: includes/settings/class-alg-wc-related-categories-settings-general.php:583
 msgid "Template type"
 msgstr ""
 
-#: includes/settings/class-alg-wc-related-categories-settings-general.php:485
-#: includes/settings/class-alg-wc-related-categories-settings-general.php:555
+#: includes/settings/class-alg-wc-related-categories-settings-general.php:513
+#: includes/settings/class-alg-wc-related-categories-settings-general.php:583
 msgid "Default"
 msgstr ""
 
-#: includes/settings/class-alg-wc-related-categories-settings-general.php:490
+#: includes/settings/class-alg-wc-related-categories-settings-general.php:518
 msgid "Template type: Custom"
 msgstr ""
 
-#: includes/settings/class-alg-wc-related-categories-settings-general.php:491
-#: includes/settings/class-alg-wc-related-categories-settings-general.php:554
+#: includes/settings/class-alg-wc-related-categories-settings-general.php:519
+#: includes/settings/class-alg-wc-related-categories-settings-general.php:582
 msgid "Ignored, unless \"%s\" option is set to \"%s\"."
 msgstr ""
 
-#: includes/settings/class-alg-wc-related-categories-settings-general.php:493
-#: includes/settings/class-alg-wc-related-categories-settings-general.php:503
+#: includes/settings/class-alg-wc-related-categories-settings-general.php:521
+#: includes/settings/class-alg-wc-related-categories-settings-general.php:531
 msgid "E.g.: %s"
 msgstr ""
 
-#: includes/settings/class-alg-wc-related-categories-settings-general.php:495
+#: includes/settings/class-alg-wc-related-categories-settings-general.php:523
 msgid "Available placeholders: %s."
 msgstr ""
 
-#: includes/settings/class-alg-wc-related-categories-settings-general.php:502
+#: includes/settings/class-alg-wc-related-categories-settings-general.php:530
 msgid "Template type: Custom: Glue"
 msgstr ""
 
-#: includes/settings/class-alg-wc-related-categories-settings-general.php:530
+#: includes/settings/class-alg-wc-related-categories-settings-general.php:558
 msgid "Image Options"
 msgstr ""
 
-#: includes/settings/class-alg-wc-related-categories-settings-general.php:535
+#: includes/settings/class-alg-wc-related-categories-settings-general.php:563
 msgid "Image size"
 msgstr ""
 
-#: includes/settings/class-alg-wc-related-categories-settings-general.php:543
+#: includes/settings/class-alg-wc-related-categories-settings-general.php:571
 msgid "Placeholder image"
 msgstr ""
 
-#: includes/settings/class-alg-wc-related-categories-settings-general.php:544
+#: includes/settings/class-alg-wc-related-categories-settings-general.php:572
 msgid "Enter attachment ID or URL to an image."
 msgstr ""
 
-#: includes/settings/class-alg-wc-related-categories-settings-general.php:545
+#: includes/settings/class-alg-wc-related-categories-settings-general.php:573
 msgid "Categories with no image will use this."
 msgstr ""
 
-#: includes/settings/class-alg-wc-related-categories-settings-general.php:546
+#: includes/settings/class-alg-wc-related-categories-settings-general.php:574
 msgid "Ignored if empty, i.e. default placeholder image will be used."
 msgstr ""
 
-#: includes/settings/class-alg-wc-related-categories-settings-general.php:552
+#: includes/settings/class-alg-wc-related-categories-settings-general.php:580
 msgid "Remove image"
 msgstr ""
 
-#: includes/settings/class-alg-wc-related-categories-settings-general.php:553
+#: includes/settings/class-alg-wc-related-categories-settings-general.php:581
 msgid "Remove"
 msgstr ""
 
-#: includes/settings/class-alg-wc-related-categories-settings-general.php:584
+#: includes/settings/class-alg-wc-related-categories-settings-general.php:612
 msgid "Hide \"Related products\""
 msgstr ""
 
-#: includes/settings/class-alg-wc-related-categories-settings-general.php:586
+#: includes/settings/class-alg-wc-related-categories-settings-general.php:614
 msgid "Hides standard WooCommerce \"Related <strong>products</strong>\" section on single product pages."
 msgstr ""
 
-#: includes/settings/class-alg-wc-related-categories-settings.php:65
+#: includes/settings/class-alg-wc-related-categories-settings.php:72
 msgid "Reset Settings"
 msgstr ""
 
-#: includes/settings/class-alg-wc-related-categories-settings.php:70
+#: includes/settings/class-alg-wc-related-categories-settings.php:77
 msgid "Reset section settings"
 msgstr ""
 
-#: includes/settings/class-alg-wc-related-categories-settings.php:71
+#: includes/settings/class-alg-wc-related-categories-settings.php:78
 msgid "Reset"
 msgstr ""
 
-#: includes/settings/class-alg-wc-related-categories-settings.php:72
+#: includes/settings/class-alg-wc-related-categories-settings.php:79
 msgid "Check the box and save changes to reset."
 msgstr ""
 
-#: includes/settings/class-alg-wc-related-categories-settings.php:100
-#: includes/settings/class-alg-wc-related-categories-settings.php:115
+#: includes/settings/class-alg-wc-related-categories-settings.php:107
+#: includes/settings/class-alg-wc-related-categories-settings.php:122
 msgid "Your settings have been reset."
 msgstr ""

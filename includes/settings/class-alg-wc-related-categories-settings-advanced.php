@@ -2,7 +2,7 @@
 /**
  * Related Categories for WooCommerce - Advanced Section Settings
  *
- * @version 1.9.0
+ * @version 1.9.8
  * @since   1.6.0
  *
  * @author  Algoritmika Ltd
@@ -13,6 +13,22 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 if ( ! class_exists( 'Alg_WC_Related_Categories_Settings_Advanced' ) ) :
 
 class Alg_WC_Related_Categories_Settings_Advanced extends Alg_WC_Related_Categories_Settings_Section {
+
+	/**
+	 * ID alg_wc_related_categories.
+	 *
+	 * @since 1.9.8
+	 *
+	 * @var string
+	 */
+	public $id;
+
+	/**
+	 * Description.
+	 *
+	 * @since 1.9.8
+	 */
+	public $desc;
 
 	/**
 	 * Constructor.

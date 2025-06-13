@@ -2,8 +2,8 @@
 Contributors: wpcodefactory, omardabbas, karzin, anbinder, algoritmika, kousikmukherjeeli
 Tags: woocommerce, related, categories, related categories, woo commerce
 Requires at least: 4.7
-Tested up to: 6.6
-Stable tag: 1.9.7
+Tested up to: 6.8
+Stable tag: 1.9.8
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -56,6 +56,13 @@ Yes, for WPML and Polylang translations, you can use our `[alg_wc_related_catego
 1. Related Categories for WooCommerce - Frontend.
 
 == Changelog ==
+
+= 1.9.8 - 13/06/2025 =
+* Fix - Deprecated 'Creation of dynamic property'.
+* Dev - Added key manager.
+* Dev - Added WPFactory menu.
+* WC tested up to: 9.9.
+* Tested up to: 6.8.
 
 = 1.9.7 - 31/07/2023 =
 * WC tested up to: 9.1.

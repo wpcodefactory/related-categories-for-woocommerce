@@ -2,7 +2,7 @@
 /**
  * Related Categories for WooCommerce - Main Class
  *
- * @version 1.9.5
+ * @version 1.9.8
  * @since   1.0.0
  *
  * @author  Algoritmika Ltd
@@ -29,6 +29,22 @@ final class Alg_WC_Related_Categories {
 	protected static $_instance = null;
 
 	/**
+	 * Core.
+	 *
+	 * @since 1.9.8
+	 */
+	public $core;
+
+	/**
+	 * $plugin_path.
+	 *
+	 * @since 1.9.8
+	 *
+	 * @var
+	 */
+	public $plugin_path = null;
+
+	/**
 	 * Main Alg_WC_Related_Categories Instance
 	 *
 	 * Ensures only one instance of Alg_WC_Related_Categories is loaded or can be loaded.
@@ -47,14 +63,22 @@ final class Alg_WC_Related_Categories {
 	}
 
 	/**
-	 * Alg_WC_Related_Categories Constructor.
+	 * Initializer.
 	 *
-	 * @version 1.9.5
+	 * @version 1.9.8
 	 * @since   1.0.0
 	 *
 	 * @access  public
 	 */
-	function __construct() {
+	function init() {
+		// Include required files
+		$this->includes();
+
+		// Adds cross-selling library.
+		$this->add_cross_selling_library();
+
+		// Move WC Settings tab to WPFactory menu.
+		add_action( 'init', array( $this, 'move_wc_settings_tab_to_wpfactory_menu' ) );
 
 		// Check for active WooCommerce plugin
 		if ( ! function_exists( 'WC' ) ) {
@@ -72,14 +96,56 @@ final class Alg_WC_Related_Categories {
 			require_once( 'pro/class-alg-wc-related-categories-pro.php' );
 		}
 
-		// Include required files
-		$this->includes();
-
 		// Admin
 		if ( is_admin() ) {
 			$this->admin();
 		}
 
+	}
+
+	/**
+	 * add_cross_selling_library.
+	 *
+	 * @version 1.9.8
+	 * @since   1.9.8
+	 *
+	 * @return void
+	 */
+	function add_cross_selling_library(){
+		if ( ! is_admin() ) {
+			return;
+		}
+		require_once $this->plugin_path() . '/vendor/autoload.php';
+		// Cross-selling library.
+		$cross_selling = new \WPFactory\WPFactory_Cross_Selling\WPFactory_Cross_Selling();
+		$cross_selling->setup( array( 'plugin_file_path'   => $this->plugin_path() ) );
+		$cross_selling->init();
+	}
+
+	/**
+	 * move_wc_settings_tab_to_wpfactory_submenu.
+	 *
+	 * @version 1.9.8
+	 * @since   1.9.8
+	 *
+	 * @return void
+	 */
+	function move_wc_settings_tab_to_wpfactory_menu() {
+		if ( ! is_admin() ) {
+			return;
+		}
+		require_once $this->plugin_path() . '/vendor/autoload.php';
+		// WC Settings tab as WPFactory submenu item.
+		$wpf_admin_menu = \WPFactory\WPFactory_Admin_Menu\WPFactory_Admin_Menu::get_instance();
+		$wpf_admin_menu->move_wc_settings_tab_to_wpfactory_menu( array(
+			'wc_settings_tab_id' => 'alg_wc_related_categories',
+			'menu_title'         => __( 'Related Categories', 'related-categories-for-woocommerce' ),
+			'page_title'         => __( 'Related Categories for WooCommerce', 'related-categories-for-woocommerce' ),
+			'plugin_icon'        => array(
+				'url'   => 'https://ps.w.org/related-categories-for-woocommerce/assets/icon.svg',
+				'style' => 'margin-left:-4px',
+			)
+		) );
 	}
 
 	/**
@@ -194,7 +260,10 @@ final class Alg_WC_Related_Categories {
 	 * @return  string
 	 */
 	function plugin_path() {
-		return untrailingslashit( plugin_dir_path( ALG_WC_RELATED_CATEGORIES_FILE ) );
+		if(is_null($this->plugin_path)){
+			$this->plugin_path = untrailingslashit( plugin_dir_path( ALG_WC_RELATED_CATEGORIES_FILE ) );
+		}
+		return $this->plugin_path;
 	}
 
 }

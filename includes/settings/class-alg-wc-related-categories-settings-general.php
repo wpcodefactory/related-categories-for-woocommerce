@@ -15,6 +15,34 @@ if ( ! class_exists( 'Alg_WC_Related_Categories_Settings_General' ) ) :
 class Alg_WC_Related_Categories_Settings_General extends Alg_WC_Related_Categories_Settings_Section {
 
 	/**
+	 * Id.
+	 *
+	 * @since 1.9.8
+	 */
+	public $id;
+
+	/**
+	 * Description.
+	 *
+	 * @since 1.9.8
+	 */
+	public $desc;
+
+	/**
+	 * Title.
+	 *
+	 * @since 1.9.8
+	 */
+	public $title;
+
+	/**
+	 * Type.
+	 *
+	 * @since 1.9.8
+	 */
+	public $type;
+
+	/**
 	 * Constructor.
 	 *
 	 * @version 1.7.0

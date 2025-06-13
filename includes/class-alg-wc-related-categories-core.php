@@ -2,7 +2,7 @@
 /**
  * Related Categories for WooCommerce - Core Class
  *
- * @version 1.9.1
+ * @version 1.9.8
  * @since   1.0.0
  *
  * @author  Algoritmika Ltd
@@ -13,6 +13,36 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 if ( ! class_exists( 'Alg_WC_Related_Categories_Core' ) ) :
 
 class Alg_WC_Related_Categories_Core {
+
+	/**
+	 * Frontend Class handler.
+	 *
+	 * @since 1.9.8
+	 */
+	public $frontend;
+
+	/**
+	 * Transient Class handler.
+	 *
+	 * @since 1.9.8
+	 */
+	public $transients;
+
+	/**
+	 * Widget Class handler.
+	 *
+	 * @since 1.9.8
+	 */
+	public $widget;
+
+	/**
+	 * init_options.
+	 *
+	 * @since 1.9.8
+	 *
+	 * @var array
+	 */
+	public $options;
 
 	/**
 	 * Constructor.
