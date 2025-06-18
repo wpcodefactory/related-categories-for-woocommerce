@@ -2,7 +2,7 @@
 /**
  * Related Categories for WooCommerce - Main Class
  *
- * @version 1.9.8
+ * @version 1.9.9
  * @since   1.0.0
  *
  * @author  Algoritmika Ltd
@@ -65,14 +65,12 @@ final class Alg_WC_Related_Categories {
 	/**
 	 * Initializer.
 	 *
-	 * @version 1.9.8
+	 * @version 1.9.9
 	 * @since   1.0.0
 	 *
 	 * @access  public
 	 */
 	function init() {
-		// Include required files
-		$this->includes();
 
 		// Adds cross-selling library.
 		$this->add_cross_selling_library();
@@ -80,15 +78,15 @@ final class Alg_WC_Related_Categories {
 		// Move WC Settings tab to WPFactory menu.
 		add_action( 'init', array( $this, 'move_wc_settings_tab_to_wpfactory_menu' ) );
 
-		// Check for active WooCommerce plugin
+		// Check for active WooCommerce plugin.
 		if ( ! function_exists( 'WC' ) ) {
 			return;
 		}
 
-		// Set up localisation
+		// Set up localisation.
 		add_action( 'init', array( $this, 'localize' ) );
 
-		// Declare compatibility with custom order tables for WooCommerce
+		// Declare compatibility with custom order tables for WooCommerce.
 		add_action( 'before_woocommerce_init', array( $this, 'wc_declare_compatibility' ) );
 
 		// Pro
@@ -96,7 +94,10 @@ final class Alg_WC_Related_Categories {
 			require_once( 'pro/class-alg-wc-related-categories-pro.php' );
 		}
 
-		// Admin
+		// Include required files.
+		$this->includes();
+
+		// Admin.
 		if ( is_admin() ) {
 			$this->admin();
 		}
@@ -125,7 +126,7 @@ final class Alg_WC_Related_Categories {
 	/**
 	 * move_wc_settings_tab_to_wpfactory_submenu.
 	 *
-	 * @version 1.9.8
+	 * @version 1.9.9
 	 * @since   1.9.8
 	 *
 	 * @return void
@@ -141,9 +142,10 @@ final class Alg_WC_Related_Categories {
 			'wc_settings_tab_id' => 'alg_wc_related_categories',
 			'menu_title'         => __( 'Related Categories', 'related-categories-for-woocommerce' ),
 			'page_title'         => __( 'Related Categories for WooCommerce', 'related-categories-for-woocommerce' ),
-			'plugin_icon'        => array(
-				'url'   => 'https://ps.w.org/related-categories-for-woocommerce/assets/icon.svg',
-				'style' => 'margin-left:-4px',
+			'plugin_icon' => array(
+				'get_url_method'    => 'wporg_plugins_api',
+				'wporg_plugin_slug' => 'related-categories-for-woocommerce',
+				'style'             => 'margin-left:-4px',
 			)
 		) );
 	}

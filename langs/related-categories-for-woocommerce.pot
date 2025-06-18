@@ -2,14 +2,14 @@
 # This file is distributed under the same license as the Related Categories for WooCommerce Pro plugin.
 msgid ""
 msgstr ""
-"Project-Id-Version: related-categories-for-woocommerce 1.9.8\n"
+"Project-Id-Version: related-categories-for-woocommerce 1.9.9\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/related-categories-for-woocommerce\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2025-06-14T00:05:27+02:00\n"
+"POT-Creation-Date: 2025-06-18T23:12:28+02:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.7.1\n"
 "X-Domain: related-categories-for-woocommerce\n"
@@ -51,7 +51,7 @@ msgid "A list of related categories."
 msgstr ""
 
 #: includes/class-alg-wc-related-categories-widget.php:28
-#: includes/class-alg-wc-related-categories.php:142
+#: includes/class-alg-wc-related-categories.php:143
 #: includes/settings/class-alg-wc-related-categories-settings-general.php:435
 #: includes/settings/class-alg-wc-related-categories-settings.php:32
 msgid "Related Categories"
@@ -409,11 +409,11 @@ msgstr ""
 msgid "Archives"
 msgstr ""
 
-#: includes/class-alg-wc-related-categories.php:143
+#: includes/class-alg-wc-related-categories.php:144
 msgid "Related Categories for WooCommerce"
 msgstr ""
 
-#: includes/class-alg-wc-related-categories.php:216
+#: includes/class-alg-wc-related-categories.php:218
 msgid "Go Pro"
 msgstr ""
 
