@@ -2,17 +2,33 @@
 /**
  * Related Categories for WooCommerce - Section Settings
  *
- * @version 1.7.0
+ * @version 2.0.0
  * @since   1.0.0
  *
  * @author  Algoritmika Ltd
  */
 
-if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
+defined( 'ABSPATH' ) || exit;
 
 if ( ! class_exists( 'Alg_WC_Related_Categories_Settings_Section' ) ) :
 
 class Alg_WC_Related_Categories_Settings_Section {
+
+	/**
+	 * id.
+	 *
+	 * @version 2.0.0
+	 * @since   2.0.0
+	 */
+	public $id;
+
+	/**
+	 * desc.
+	 *
+	 * @version 2.0.0
+	 * @since   2.0.0
+	 */
+	public $desc;
 
 	/**
 	 * Constructor.

@@ -2,68 +2,80 @@
 /**
  * Related Categories for WooCommerce - Core Class
  *
- * @version 1.9.8
+ * @version 2.0.0
  * @since   1.0.0
  *
  * @author  Algoritmika Ltd
  */
 
-if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
+defined( 'ABSPATH' ) || exit;
 
 if ( ! class_exists( 'Alg_WC_Related_Categories_Core' ) ) :
 
 class Alg_WC_Related_Categories_Core {
 
 	/**
-	 * Frontend Class handler.
+	 * Frontend class handler.
 	 *
-	 * @since 1.9.8
+	 * @version 1.9.8
+	 * @since   1.9.8
 	 */
 	public $frontend;
 
 	/**
-	 * Transient Class handler.
+	 * Transient class handler.
 	 *
-	 * @since 1.9.8
+	 * @version 1.9.8
+	 * @since   1.9.8
 	 */
 	public $transients;
 
 	/**
-	 * Widget Class handler.
+	 * Widget class handler.
 	 *
-	 * @since 1.9.8
+	 * @version 1.9.8
+	 * @since   1.9.8
 	 */
 	public $widget;
 
 	/**
-	 * init_options.
+	 * options.
 	 *
-	 * @since 1.9.8
+	 * @options 1.9.8
+	 * @since   1.9.8
 	 *
-	 * @var array
+	 * @var     array
 	 */
 	public $options;
 
 	/**
+	 * old_options.
+	 *
+	 * @version 2.0.0
+	 * @since   2.0.0
+	 */
+	public $old_options;
+
+	/**
 	 * Constructor.
 	 *
-	 * @version 1.8.0
+	 * @version 2.0.0
 	 * @since   1.0.0
 	 *
-	 * @todo    [next] recheck all variable names, e.g. `$related_categories` vs `$related_product_category_ids`, etc.
+	 * @todo    (dev) recheck all variable names, e.g. `$related_categories` vs `$related_product_category_ids`, etc.
 	 */
 	function __construct() {
 		$this->init_options();
-		$this->frontend   = require_once( 'class-alg-wc-related-categories-frontend.php' );
-		$this->transients = require_once( 'class-alg-wc-related-categories-transients.php' );
-		$this->widget     = require_once( 'class-alg-wc-related-categories-widget.php' );
+		$this->frontend   = require_once plugin_dir_path( __FILE__ ) . 'class-alg-wc-related-categories-frontend.php';
+		$this->transients = require_once plugin_dir_path( __FILE__ ) . 'class-alg-wc-related-categories-transients.php';
+		$this->widget     = require_once plugin_dir_path( __FILE__ ) . 'class-alg-wc-related-categories-widget.php';
 		do_action( 'alg_wc_related_categories_core_loaded', $this );
 	}
 
 	/**
 	 * init_options.
 	 *
-	 * @version 1.8.0
+	 * @version 2.0.0
 	 * @since   1.3.0
 	 */
 	function init_options() {
@@ -93,7 +105,7 @@ class Alg_WC_Related_Categories_Core {
 				'hide_empty'                             => 'yes',
 				'orderby'                                => 'name',
 				'order'                                  => 'ASC',
-				'template_header'                        => '<section class="related categories">' . PHP_EOL . '<h2>' . __( 'Related categories', 'related-categories-for-woocommerce' ) . '</h2>',
+				'template_header'                        => '<section class="related categories">' . PHP_EOL . '<h2>' . '%title%' . '</h2>',
 				'template_footer'                        => '</section>',
 				'template_type'                          => 'default',
 				'template_custom'                        => '',
@@ -127,7 +139,7 @@ class Alg_WC_Related_Categories_Core {
 				'hide_empty'                             => 'yes',
 				'orderby'                                => 'name',
 				'order'                                  => 'ASC',
-				'template_header'                        => '<section class="related categories">' . PHP_EOL . '<h2>' . __( 'Related categories', 'related-categories-for-woocommerce' ) . '</h2>',
+				'template_header'                        => '<section class="related categories">' . PHP_EOL . '<h2>' . '%title%' . '</h2>',
 				'template_footer'                        => '</section>',
 				'template_type'                          => 'default',
 				'template_custom'                        => '',
@@ -208,7 +220,7 @@ class Alg_WC_Related_Categories_Core {
 	 * @version 1.9.1
 	 * @since   1.0.0
 	 *
-	 * @todo    [later] (feature) relate "through product"
+	 * @todo    (feature) relate "through product"
 	 */
 	function get_related_categories_single( $product ) {
 		$relate_options = $this->get_relate_options( 'single' );

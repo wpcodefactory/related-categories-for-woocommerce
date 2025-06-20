@@ -2,33 +2,17 @@
 /**
  * Related Categories for WooCommerce - Advanced Section Settings
  *
- * @version 1.9.8
+ * @version 2.0.0
  * @since   1.6.0
  *
  * @author  Algoritmika Ltd
  */
 
-if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
+defined( 'ABSPATH' ) || exit;
 
 if ( ! class_exists( 'Alg_WC_Related_Categories_Settings_Advanced' ) ) :
 
 class Alg_WC_Related_Categories_Settings_Advanced extends Alg_WC_Related_Categories_Settings_Section {
-
-	/**
-	 * ID alg_wc_related_categories.
-	 *
-	 * @since 1.9.8
-	 *
-	 * @var string
-	 */
-	public $id;
-
-	/**
-	 * Description.
-	 *
-	 * @since 1.9.8
-	 */
-	public $desc;
 
 	/**
 	 * Constructor.
@@ -45,11 +29,11 @@ class Alg_WC_Related_Categories_Settings_Advanced extends Alg_WC_Related_Categor
 	/**
 	 * get_settings.
 	 *
-	 * @version 1.9.0
+	 * @version 2.0.0
 	 * @since   1.6.0
 	 *
-	 * @todo    [later] (desc) transients: better desc
-	 * @todo    [later] transients: delete tool?
+	 * @todo    (desc) transients: better desc
+	 * @todo    (dev) transients: delete tool?
 	 */
 	function get_settings() {
 		return array(
@@ -60,13 +44,17 @@ class Alg_WC_Related_Categories_Settings_Advanced extends Alg_WC_Related_Categor
 			),
 			array(
 				'title'    => __( 'Multi-language', 'related-categories-for-woocommerce' ),
-				'desc_tip' => __( 'Use the default language product/term ID instead of the translated one.', 'related-categories-for-woocommerce' ) . ' ' .
-					sprintf( __( 'Affects "%s", "%s", "%s" and "%s" settings.', 'related-categories-for-woocommerce' ),
+				'desc_tip' => (
+					__( 'Use the default language product/term ID instead of the translated one.', 'related-categories-for-woocommerce' ) . ' ' .
+					sprintf(
+						/* Translators: %1$s: Settings name, %2$s: Settings name, %3$s: Settings name, %4$s: Settings name. */
+						__( 'Affects "%1$s", "%2$s", "%3$s" and "%4$s" settings.', 'related-categories-for-woocommerce' ),
 						__( 'Per category', 'related-categories-for-woocommerce' ),
 						__( 'Per tag', 'related-categories-for-woocommerce' ),
 						__( 'Per custom taxonomy', 'related-categories-for-woocommerce' ),
 						__( 'Per product', 'related-categories-for-woocommerce' )
-					),
+					)
+				),
 				'id'       => 'alg_wc_related_categories_multi_language',
 				'default'  => 'no',
 				'type'     => 'select',

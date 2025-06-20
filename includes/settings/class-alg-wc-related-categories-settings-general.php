@@ -2,43 +2,31 @@
 /**
  * Related Categories for WooCommerce - General Section Settings
  *
- * @version 1.9.2
+ * @version 2.0.0
  * @since   1.7.0
  *
  * @author  Algoritmika Ltd
  */
 
-if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
+defined( 'ABSPATH' ) || exit;
 
 if ( ! class_exists( 'Alg_WC_Related_Categories_Settings_General' ) ) :
 
 class Alg_WC_Related_Categories_Settings_General extends Alg_WC_Related_Categories_Settings_Section {
 
 	/**
-	 * Id.
+	 * title.
 	 *
-	 * @since 1.9.8
-	 */
-	public $id;
-
-	/**
-	 * Description.
-	 *
-	 * @since 1.9.8
-	 */
-	public $desc;
-
-	/**
-	 * Title.
-	 *
-	 * @since 1.9.8
+	 * @version 1.9.8
+	 * @since   1.9.8
 	 */
 	public $title;
 
 	/**
-	 * Type.
+	 * type.
 	 *
-	 * @since 1.9.8
+	 * @version 1.9.8
+	 * @since   1.9.8
 	 */
 	public $type;
 
@@ -48,7 +36,7 @@ class Alg_WC_Related_Categories_Settings_General extends Alg_WC_Related_Categori
 	 * @version 1.7.0
 	 * @since   1.7.0
 	 *
-	 * @todo    [maybe] use `{$this->option_prefix}` instead of `alg_wc_related_categories_options_{$this->type}`
+	 * @todo    (dev) use `{$this->option_prefix}` instead of `alg_wc_related_categories_options_{$this->type}`
 	 */
 	function __construct( $single_or_loop ) {
 		$this->id    = ( 'single' === $single_or_loop ? ''                                                                : 'loop' );
@@ -64,7 +52,7 @@ class Alg_WC_Related_Categories_Settings_General extends Alg_WC_Related_Categori
 	 * @version 1.7.0
 	 * @since   1.7.0
 	 *
-	 * @todo    [maybe] move all to this function (i.e. instead of separate `get_general_settings()`, `get_relate_settings()`, etc.)?
+	 * @todo    (dev) move all to this function (i.e. instead of separate `get_general_settings()`, `get_relate_settings()`, etc.)?
 	 */
 	function get_settings() {
 		return array_merge(
@@ -83,19 +71,27 @@ class Alg_WC_Related_Categories_Settings_General extends Alg_WC_Related_Categori
 	 * @version 1.9.1
 	 * @since   1.3.0
 	 *
-	 * @todo    [now] (desc) rename "Archives" to "Shop"?
-	 * @todo    [next] Order by: Count: remove desc?
+	 * @todo    (desc) rename "Archives" to "Shop"?
+	 * @todo    (dev) Order by: Count: remove desc?
 	 */
 	function get_general_settings() {
 		$default_enabled = ( 'single' === $this->type ? 'yes' : 'no' );
 		return array(
 			array(
-				'title'    => sprintf( __( '%s Options', 'related-categories-for-woocommerce' ), $this->title ),
+				'title'    => sprintf(
+					/* Translators: %s: Section title. */
+					__( '%s Options', 'related-categories-for-woocommerce' ),
+					$this->title
+				),
 				'type'     => 'title',
 				'id'       => 'alg_wc_related_categories_general_options',
 			),
 			array(
-				'title'    => sprintf( __( 'Display on %s', 'related-categories-for-woocommerce' ), $this->title ),
+				'title'    => sprintf(
+					/* Translators: %s: Section title. */
+					__( 'Display on %s', 'related-categories-for-woocommerce' ),
+					$this->title
+				),
 				'desc'     => '<strong>' . __( 'Enable section', 'related-categories-for-woocommerce' ) . '</strong>',
 				'id'       => "alg_wc_related_categories_options_{$this->type}[enabled]",
 				'default'  => $default_enabled,
@@ -128,10 +124,13 @@ class Alg_WC_Related_Categories_Settings_General extends Alg_WC_Related_Categori
 			array(
 				'title'    => __( 'Order by', 'related-categories-for-woocommerce' ),
 				'desc_tip' => __( 'If you want to order by the ids you specified then you can use "None".', 'related-categories-for-woocommerce' ),
-				'desc'     => sprintf( __( '"Count" option will sort categories as when sorted by the "Count" column in %s.', 'related-categories-for-woocommerce' ),
+				'desc'     => sprintf(
+					/* Translators: %s: Link. */
+					__( '"Count" option will sort categories as when sorted by the "Count" column in %s.', 'related-categories-for-woocommerce' ),
 					'<a href="' . admin_url( 'edit-tags.php?taxonomy=product_cat&post_type=product&orderby=count&order=desc' ) . '">' .
 						__( 'Products > Categories', 'related-categories-for-woocommerce' ) .
-					'</a>' ),
+					'</a>'
+				),
 				'id'       => "alg_wc_related_categories_options_{$this->type}[orderby]",
 				'default'  => 'name',
 				'type'     => 'select',
@@ -171,9 +170,9 @@ class Alg_WC_Related_Categories_Settings_General extends Alg_WC_Related_Categori
 	 * @version 1.8.0
 	 * @since   1.3.0
 	 *
-	 * @todo    [maybe] (dev) `alg_wc_related_categories_settings`: better styling?
-	 * @todo    [maybe] (desc) Per custom taxonomy: better desc?
-	 * @todo    [maybe] (desc) "Relate Options": `__( 'These options will allow you to set related categories <strong>automatically</strong>.', 'related-categories-for-woocommerce' )`?
+	 * @todo    (dev) `alg_wc_related_categories_settings`: better styling?
+	 * @todo    (desc) Per custom taxonomy: better desc?
+	 * @todo    (desc) "Relate Options": `__( 'These options will allow you to set related categories <strong>automatically</strong>.', 'related-categories-for-woocommerce' )`?
 	 */
 	function get_relate_settings() {
 		$current_desc = ( 'single' === $this->type ?
@@ -276,9 +275,16 @@ class Alg_WC_Related_Categories_Settings_General extends Alg_WC_Related_Categori
 			$settings = array_merge( $settings, array(
 				array(
 					'desc'     => __( 'Always show first', 'related-categories-for-woocommerce' ),
-					'desc_tip' => __( 'Always show the current category in first position.', 'related-categories-for-woocommerce' ) . ' ' .
-						sprintf( __( 'Works for the "%s" template type only.', 'related-categories-for-woocommerce' ),
-							'<strong>' . __( 'Custom', 'related-categories-for-woocommerce' ) . '</strong>' ),
+					'desc_tip' => (
+						__( 'Always show the current category in first position.', 'related-categories-for-woocommerce' ) . ' ' .
+						sprintf(
+							/* Translators: %s: Template type. */
+							__( 'Works for the "%s" template type only.', 'related-categories-for-woocommerce' ),
+							'<strong>' .
+								__( 'Custom', 'related-categories-for-woocommerce' ) .
+							'</strong>'
+						)
+					),
 					'id'       => "alg_wc_related_categories_options_{$this->type}[relate_current_always_first]",
 					'default'  => 'no',
 					'type'     => 'checkbox',
@@ -303,10 +309,16 @@ class Alg_WC_Related_Categories_Settings_General extends Alg_WC_Related_Categori
 			array(
 				'title'    => __( 'Per category', 'related-categories-for-woocommerce' ),
 				'desc'     => __( 'Enable', 'related-categories-for-woocommerce' ),
-				'desc_tip' => __( 'This option will allow you to set related categories manually for each category.', 'related-categories-for-woocommerce' ) . ' ' .
-					sprintf( __( 'It will add "Related categories" settings section to each category edit page (in %s).', 'related-categories-for-woocommerce' ),
+				'desc_tip' => (
+					__( 'This option will allow you to set related categories manually for each category.', 'related-categories-for-woocommerce' ) . ' ' .
+					sprintf(
+						/* Translators: %s: Link. */
+						__( 'It will add "Related categories" settings section to each category edit page (in %s).', 'related-categories-for-woocommerce' ),
 						'<a href="' . admin_url( 'edit-tags.php?taxonomy=product_cat&post_type=product' ) . '">' .
-							__( 'Products > Categories > Edit category', 'related-categories-for-woocommerce' ) . '</a>' ),
+							__( 'Products > Categories > Edit category', 'related-categories-for-woocommerce' ) .
+						'</a>'
+					)
+				),
 				'id'       => "alg_wc_related_categories_options_{$this->type}[relate_per_category]",
 				'default'  => 'no',
 				'type'     => 'checkbox',
@@ -315,10 +327,16 @@ class Alg_WC_Related_Categories_Settings_General extends Alg_WC_Related_Categori
 			array(
 				'title'    => __( 'Per tag', 'related-categories-for-woocommerce' ),
 				'desc'     => __( 'Enable', 'related-categories-for-woocommerce' ),
-				'desc_tip' => __( 'This option will allow you to set related categories manually for each tag.', 'related-categories-for-woocommerce' ) . ' ' .
-					sprintf( __( 'It will add "Related categories" settings section to each tag edit page (in %s).', 'related-categories-for-woocommerce' ),
+				'desc_tip' => (
+					__( 'This option will allow you to set related categories manually for each tag.', 'related-categories-for-woocommerce' ) . ' ' .
+					sprintf(
+						/* Translators: %s: Link. */
+						__( 'It will add "Related categories" settings section to each tag edit page (in %s).', 'related-categories-for-woocommerce' ),
 						'<a href="' . admin_url( 'edit-tags.php?taxonomy=product_tag&post_type=product' ) . '">' .
-							__( 'Products > Tags > Edit tag', 'related-categories-for-woocommerce' ) . '</a>' ),
+							__( 'Products > Tags > Edit tag', 'related-categories-for-woocommerce' ) .
+						'</a>'
+					)
+				),
 				'id'       => "alg_wc_related_categories_options_{$this->type}[relate_per_tag]",
 				'default'  => 'no',
 				'type'     => 'checkbox',
@@ -326,9 +344,15 @@ class Alg_WC_Related_Categories_Settings_General extends Alg_WC_Related_Categori
 			),
 			array(
 				'title'    => __( 'Per custom taxonomy', 'related-categories-for-woocommerce' ),
-				'desc'     => __( 'This option will allow you to set related categories manually for each custom taxonomy.', 'related-categories-for-woocommerce' ) . ' ' .
+				'desc'     => (
+					__( 'This option will allow you to set related categories manually for each custom taxonomy.', 'related-categories-for-woocommerce' ) . ' ' .
 					__( 'It will add "Related categories" settings section to each custom taxonomy edit page.', 'related-categories-for-woocommerce' ) . '<br>' .
-					sprintf( __( 'Set as comma separated taxonomy slug list, e.g.: %s.', 'related-categories-for-woocommerce' ), '<code>product_brand,product_color</code>' ),
+					sprintf(
+						/* Translators: %s: Example. */
+						__( 'Set as comma separated taxonomy slug list, e.g.: %s.', 'related-categories-for-woocommerce' ),
+						'<code>product_brand,product_color</code>'
+					)
+				),
 				'id'       => "alg_wc_related_categories_options_{$this->type}[relate_per_taxonomy]",
 				'default'  => '',
 				'type'     => 'text',
@@ -340,10 +364,16 @@ class Alg_WC_Related_Categories_Settings_General extends Alg_WC_Related_Categori
 				array(
 					'title'    => __( 'Per product', 'related-categories-for-woocommerce' ),
 					'desc'     => __( 'Enable', 'related-categories-for-woocommerce' ),
-					'desc_tip' => __( 'This option will allow you to set related categories manually for each product.', 'related-categories-for-woocommerce' ) . ' ' .
-						sprintf( __( 'It will add "Related categories" meta box to each product edit page (in %s).', 'related-categories-for-woocommerce' ),
+					'desc_tip' => (
+						__( 'This option will allow you to set related categories manually for each product.', 'related-categories-for-woocommerce' ) . ' ' .
+						sprintf(
+							/* Translators: %s: Link. */
+							__( 'It will add "Related categories" meta box to each product edit page (in %s).', 'related-categories-for-woocommerce' ),
 							'<a href="' . admin_url( 'edit.php?post_type=product' ) . '">' .
-								__( 'Products > Edit product', 'related-categories-for-woocommerce' ) . '</a>' ),
+								__( 'Products > Edit product', 'related-categories-for-woocommerce' ) .
+							'</a>'
+						)
+					),
 					'id'       => "alg_wc_related_categories_options_{$this->type}[relate_per_product]",
 					'default'  => 'no',
 					'type'     => 'checkbox',
@@ -374,15 +404,15 @@ class Alg_WC_Related_Categories_Settings_General extends Alg_WC_Related_Categori
 	/**
 	 * get_position_settings.
 	 *
-	 * @version 1.9.2
+	 * @version 2.0.0
 	 * @since   1.3.0
 	 *
-	 * @todo    [next] widget: move to a separate subsection?
-	 * @todo    [next] widget: remove option (i.e. always `yes`), and then move the desc to the "Enable section" option? (unless we move Widget options to a separate subsection)?
-	 * @todo    [later] loop: add `$section_desc`
-	 * @todo    [later] (feature) custom hooks (i.e. positions)
-	 * @todo    [maybe] add more Positions (both single and loop)
-	 * @todo    [maybe] shortcode: better desc?
+	 * @todo    (dev) widget: move to a separate subsection?
+	 * @todo    (dev) widget: remove option (i.e. always `yes`), and then move the desc to the "Enable section" option? (unless we move Widget options to a separate subsection)?
+	 * @todo    (dev) loop: add `$section_desc`
+	 * @todo    (feature) custom hooks (i.e. positions)
+	 * @todo    (dev) add more Positions (both single and loop)
+	 * @todo    (dev) shortcode: better desc?
 	 */
 	function get_position_settings() {
 		$section_desc     = ( 'single' === $this->type ? __( 'To place related categories section before the standard related products section, select "After single product summary" for "Position" and "19" for "Position order". To place it after the related products section, set "21" for "Position order".', 'related-categories-for-woocommerce' ) . '<br>' : '' );
@@ -408,15 +438,24 @@ class Alg_WC_Related_Categories_Settings_General extends Alg_WC_Related_Categori
 		return array(
 			array(
 				'title'    => __( 'Position Options', 'related-categories-for-woocommerce' ),
-				'desc'     => $section_desc . sprintf( __( 'You can also use the %s shortcode to output the related categories.', 'related-categories-for-woocommerce' ),
-					'<code>[alg_wc_related_categories_' . $this->type . ']</code>' ),
+				'desc'     => (
+					$section_desc .
+					sprintf(
+						/* Translators: %s: Shortcode name. */
+						__( 'You can also use the %s shortcode to output the related categories.', 'related-categories-for-woocommerce' ),
+						'<code>[alg_wc_related_categories_' . $this->type . ']</code>'
+					)
+				),
 				'type'     => 'title',
 				'id'       => 'alg_wc_related_categories_position_options',
 			),
 			array(
 				'title'    => __( 'Position', 'related-categories-for-woocommerce' ),
-				'desc_tip' => sprintf( __( '"Disable" position can be set if you are going to use %s shortcode or widget instead.', 'related-categories-for-woocommerce' ),
-					'[alg_wc_related_categories_' . $this->type . ']' ),
+				'desc_tip' => sprintf(
+					/* Translators: %s: Shortcode name. */
+					__( '"Disable" position can be set if you are going to use %s shortcode or widget instead.', 'related-categories-for-woocommerce' ),
+					'[alg_wc_related_categories_' . $this->type . ']'
+				),
 				'id'       => "alg_wc_related_categories_options_{$this->type}[position]",
 				'default'  => $default_position,
 				'type'     => 'select',
@@ -431,9 +470,14 @@ class Alg_WC_Related_Categories_Settings_General extends Alg_WC_Related_Categori
 			),
 			array(
 				'title'    => __( 'Widget', 'related-categories-for-woocommerce' ),
-				'desc_tip' => sprintf( __( 'This will add "%s" widget to "%s".', 'related-categories-for-woocommerce' ),
+				'desc_tip' => sprintf(
+					/* Translators: %1$s: Widget name, %2$s: Link. */
+					__( 'This will add "%1$s" widget to "%2$s".', 'related-categories-for-woocommerce' ),
 					__( 'Related Categories', 'related-categories-for-woocommerce' ) . ': ' . $this->title,
-					'<a href="' . admin_url( 'widgets.php' ) . '">' . __( 'Appearance > Widgets', 'related-categories-for-woocommerce' ) . '</a>' ),
+					'<a href="' . admin_url( 'widgets.php' ) . '">' .
+						__( 'Appearance > Widgets', 'related-categories-for-woocommerce' ) .
+					'</a>'
+				),
 				'desc'     => __( 'Enable', 'related-categories-for-woocommerce' ),
 				'id'       => "alg_wc_related_categories_options_{$this->type}[widget]",
 				'default'  => 'no',
@@ -459,12 +503,12 @@ class Alg_WC_Related_Categories_Settings_General extends Alg_WC_Related_Categori
 	/**
 	 * get_template_settings.
 	 *
-	 * @version 1.9.0
+	 * @version 2.0.0
 	 * @since   1.3.0
 	 *
-	 * @todo    [next] template_custom: better default value
-	 * @todo    [next] default/custom: better desc
-	 * @todo    [maybe] template_custom: clean-up some placeholders, e.g. `%category_id%`, etc.?
+	 * @todo    (dev) template_custom: better default value
+	 * @todo    (dev) default/custom: better desc
+	 * @todo    (dev) template_custom: clean-up some placeholders, e.g. `%category_id%`, etc.?
 	 */
 	function get_template_settings() {
 		$placeholders = array(
@@ -484,8 +528,11 @@ class Alg_WC_Related_Categories_Settings_General extends Alg_WC_Related_Categori
 		return array(
 			array(
 				'title'    => __( 'Template Options', 'related-categories-for-woocommerce' ),
-				'desc'     => sprintf( __( 'You can use HTML and/or shortcodes here, e.g. %s.', 'related-categories-for-woocommerce' ),
-					'<code>[alg_wc_related_categories_translate]</code>' ),
+				'desc'     => sprintf(
+					/* Translators: %s: Shortcode name. */
+					__( 'You can use HTML and/or shortcodes here, e.g. %s.', 'related-categories-for-woocommerce' ),
+					'<code>[alg_wc_related_categories_translate]</code>'
+				),
 				'type'     => 'title',
 				'id'       => 'alg_wc_related_categories_template_options',
 			),
@@ -516,11 +563,26 @@ class Alg_WC_Related_Categories_Settings_General extends Alg_WC_Related_Categori
 			),
 			array(
 				'title'    => __( 'Template type: Custom', 'related-categories-for-woocommerce' ),
-				'desc_tip' => sprintf( __( 'Ignored, unless "%s" option is set to "%s".', 'related-categories-for-woocommerce' ),
-					__( 'Template type', 'related-categories-for-woocommerce' ), __( 'Custom', 'related-categories-for-woocommerce' ) ),
-				'desc'     => sprintf( __( 'E.g.: %s', 'related-categories-for-woocommerce' ),
-						'<code>' . esc_html( '<a href="%category_link%" title="%category_name%">%category_name%</a>' ) . '</code>' ) . '<br>' .
-					sprintf( __( 'Available placeholders: %s.', 'related-categories-for-woocommerce' ), '<code>' . implode( '</code>, <code>', $placeholders ) . '</code>' ),
+				'desc_tip' => sprintf(
+					/* Translators: %1$s: Option name, %2$s: Option value. */
+					__( 'Ignored, unless "%1$s" option is set to "%2$s".', 'related-categories-for-woocommerce' ),
+					__( 'Template type', 'related-categories-for-woocommerce' ),
+					__( 'Custom', 'related-categories-for-woocommerce' )
+				),
+				'desc'     => (
+					sprintf(
+						/* Translators: %s: Example. */
+						__( 'E.g.: %s', 'related-categories-for-woocommerce' ),
+						'<code>' .
+							esc_html( '<a href="%category_link%" title="%category_name%">%category_name%</a>' ) .
+						'</code>'
+					) . '<br>' .
+					sprintf(
+						/* Translators: %s: Placeholder list. */
+						__( 'Available placeholders: %s.', 'related-categories-for-woocommerce' ),
+						'<code>' . implode( '</code>, <code>', $placeholders ) . '</code>'
+					)
+				),
 				'id'       => "alg_wc_related_categories_options_{$this->type}[template_custom]",
 				'default'  => '',
 				'type'     => 'textarea',
@@ -528,7 +590,11 @@ class Alg_WC_Related_Categories_Settings_General extends Alg_WC_Related_Categori
 			),
 			array(
 				'title'    => __( 'Template type: Custom: Glue', 'related-categories-for-woocommerce' ),
-				'desc'     => sprintf( __( 'E.g.: %s', 'related-categories-for-woocommerce' ), '<code>&nbsp;|&nbsp;</code>' ),
+				'desc'     => sprintf(
+					/* Translators: %s: Example. */
+					__( 'E.g.: %s', 'related-categories-for-woocommerce' ),
+					'<code>&nbsp;|&nbsp;</code>'
+				),
 				'id'       => "alg_wc_related_categories_options_{$this->type}[template_custom_glue]",
 				'default'  => '',
 				'type'     => 'text',
@@ -544,13 +610,13 @@ class Alg_WC_Related_Categories_Settings_General extends Alg_WC_Related_Categori
 	/**
 	 * get_image_settings.
 	 *
-	 * @version 1.7.0
+	 * @version 2.0.0
 	 * @since   1.5.0
 	 *
-	 * @todo    [next] Image size: add (and default to) `'' => __( 'Default', 'related-categories-for-woocommerce' )` option?
-	 * @todo    [maybe] Remove image: better desc?
-	 * @todo    [maybe] Placeholder image: better desc?
-	 * @todo    [maybe] Image size: `text` instead of `select`?
+	 * @todo    (dev) Image size: add (and default to) `'' => __( 'Default', 'related-categories-for-woocommerce' )` option?
+	 * @todo    (dev) Remove image: better desc?
+	 * @todo    (dev) Placeholder image: better desc?
+	 * @todo    (dev) Image size: `text` instead of `select`?
 	 */
 	function get_image_settings() {
 		return array(
@@ -579,8 +645,12 @@ class Alg_WC_Related_Categories_Settings_General extends Alg_WC_Related_Categori
 			array(
 				'title'    => __( 'Remove image', 'related-categories-for-woocommerce' ),
 				'desc'     => __( 'Remove', 'related-categories-for-woocommerce' ),
-				'desc_tip' => sprintf( __( 'Ignored, unless "%s" option is set to "%s".', 'related-categories-for-woocommerce' ),
-					__( 'Template Options', 'related-categories-for-woocommerce' ) . ' > ' . __( 'Template type', 'related-categories-for-woocommerce' ), __( 'Default', 'related-categories-for-woocommerce' ) ),
+				'desc_tip' => sprintf(
+					/* Translators: %1$s: Option name, %2$s: Option value. */
+					__( 'Ignored, unless "%1$s" option is set to "%2$s".', 'related-categories-for-woocommerce' ),
+					__( 'Template Options', 'related-categories-for-woocommerce' ) . ' > ' . __( 'Template type', 'related-categories-for-woocommerce' ),
+					__( 'Default', 'related-categories-for-woocommerce' )
+				),
 				'id'       => "alg_wc_related_categories_options_{$this->type}[remove_image]",
 				'default'  => 'no',
 				'type'     => 'checkbox',

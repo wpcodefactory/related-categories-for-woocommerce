@@ -2,13 +2,13 @@
 /**
  * Related Categories for WooCommerce - Widget Class
  *
- * @version 1.8.0
+ * @version 2.0.0
  * @since   1.7.0
  *
  * @author  Algoritmika Ltd
  */
 
-if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
+defined( 'ABSPATH' ) || exit;
 
 if ( ! class_exists( 'Alg_WC_Related_Categories_Widget' ) ) :
 
@@ -25,7 +25,11 @@ class Alg_WC_Related_Categories_Widget extends WP_Widget {
 			'classname'   => "alg_wc_related_categories_widget_{$this->type}",
 			'description' => __( 'A list of related categories.', 'related-categories-for-woocommerce' ),
 		);
-		parent::__construct( $widget_ops['classname'], __( 'Related Categories', 'related-categories-for-woocommerce' ) . ': ' . $this->desc, $widget_ops );
+		parent::__construct(
+			$widget_ops['classname'],
+			__( 'Related Categories', 'related-categories-for-woocommerce' ) . ': ' . $this->desc,
+			$widget_ops
+		);
 	}
 
 	/**
@@ -34,8 +38,8 @@ class Alg_WC_Related_Categories_Widget extends WP_Widget {
 	 * @version 1.8.0
 	 * @since   1.7.0
 	 *
-	 * @todo    [next] [!] (dev) `! $do_override_relate_options`: remove all hidden options from `$instance`
-	 * @todo    [next] [!] (dev) override_options + visibility: better solution
+	 * @todo    (dev) [!] `! $do_override_relate_options`: remove all hidden options from `$instance`
+	 * @todo    (dev) [!] override_options + visibility: better solution
 	 */
 	function get_related_categories( $instance ) {
 		$func = "output_related_categories_{$this->type}";
@@ -81,7 +85,11 @@ class Alg_WC_Related_Categories_Widget extends WP_Widget {
 			$html = '';
 			$html .= $args['before_widget'];
 			if ( ! empty( $instance['title'] ) ) {
-				$html .= $args['before_title'] . apply_filters( 'widget_title', $instance['title'] ) . $args['after_title'];
+				$html .= (
+					$args['before_title'] .
+						apply_filters( 'widget_title', $instance['title'] ) .
+					$args['after_title']
+				);
 			}
 			$html .= $related_categories;
 			$html .= $args['after_widget'];
@@ -92,21 +100,21 @@ class Alg_WC_Related_Categories_Widget extends WP_Widget {
 	/**
 	 * get_widget_option_fields.
 	 *
-	 * @version 1.8.0
+	 * @version 2.0.0
 	 * @since   1.7.0
 	 *
-	 * @todo    [next] (dev) Relate Options: `relate_per_taxonomy`: rethink
-	 * @todo    [next] (dev) Relate Options: `show_if_checked`
-	 * @todo    [next] (dev) automatically get options list from `Alg_WC_Related_Categories_Settings_General`
-	 * @todo    [next] (dev) get default values from `get_option()`? (and then maybe remove `widget_override_relate_options` option, i.e. always `yes`)
-	 * @todo    [next] (dev) `placeholder_image` and `image_size`?
-	 * @todo    [next] (dev) `textarea`, `glue`: sanitize?
-	 * @todo    [next] (desc) `orderby`: shorter desc?
-	 * @todo    [next] (desc) `order`: shorter desc?
-	 * @todo    [later] (dev) Relate Options: `relate_per_category`, `relate_per_tag`, etc.: apply `alg_wc_related_categories_settings` filter?
-	 * @todo    [maybe] (desc) Relate Options: `relate_per_category`, `relate_per_tag`, etc.: add tip: '... options must be enabled in "WooCommerce > Settings > Related Categories"...'
-	 * @todo    [maybe] (dev) customizable `template_type`? (then also `remove_image`)?
-	 * @todo    [maybe] (dev) Template(s) & Glue: better default values?
+	 * @todo    (dev) Relate Options: `relate_per_taxonomy`: rethink
+	 * @todo    (dev) Relate Options: `show_if_checked`
+	 * @todo    (dev) automatically get options list from `Alg_WC_Related_Categories_Settings_General`
+	 * @todo    (dev) get default values from `get_option()`? (and then maybe remove `widget_override_relate_options` option, i.e. always `yes`)
+	 * @todo    (dev) `placeholder_image` and `image_size`?
+	 * @todo    (dev) `textarea`, `glue`: sanitize?
+	 * @todo    (desc) `orderby`: shorter desc?
+	 * @todo    (desc) `order`: shorter desc?
+	 * @todo    (dev) Relate Options: `relate_per_category`, `relate_per_tag`, etc.: apply `alg_wc_related_categories_settings` filter?
+	 * @todo    (desc) Relate Options: `relate_per_category`, `relate_per_tag`, etc.: add tip: '... options must be enabled in "WooCommerce > Settings > Related Categories"...'
+	 * @todo    (dev) customizable `template_type`? (then also `remove_image`)?
+	 * @todo    (dev) Template(s) & Glue: better default values?
 	 */
 	function get_widget_option_fields() {
 		$settings = array(
@@ -124,10 +132,15 @@ class Alg_WC_Related_Categories_Widget extends WP_Widget {
 			),
 			'columns' => array(
 				'title'    => __( 'Columns', 'related-categories-for-woocommerce' ),
-				'desc'     => __( 'The number of columns to display.', 'related-categories-for-woocommerce' ) . ' ' .
-					sprintf( __( 'You can use this in the "%s" option, e.g.: %s.', 'related-categories-for-woocommerce' ),
+				'desc'     => (
+					__( 'The number of columns to display.', 'related-categories-for-woocommerce' ) . ' ' .
+					sprintf(
+						/* Translators: %1$s: Option name, %2$s: Example. */
+						__( 'You can use this in the "%1$s" option, e.g.: %2$s.', 'related-categories-for-woocommerce' ),
 						__( 'Template', 'related-categories-for-woocommerce' ),
-						'<code>' . esc_html( 'class="column-%column_nr%"' ) . '</code>' ),
+						'<code>' . esc_html( 'class="column-%column_nr%"' ) . '</code>'
+					)
+				),
 				'default'  => 4,
 				'type'     => 'number',
 				'custom_atts' => 'min="1"',
@@ -144,11 +157,16 @@ class Alg_WC_Related_Categories_Widget extends WP_Widget {
 			),
 			'orderby' => array(
 				'title'    => __( 'Order by', 'related-categories-for-woocommerce' ),
-				'desc'     => __( 'If you want to order by the ids you specified then you can use "None".', 'related-categories-for-woocommerce' ) . ' ' .
-					sprintf( __( '"Count" option will sort categories as when sorted by "Count" column in %s.', 'related-categories-for-woocommerce' ),
+				'desc'     => (
+					__( 'If you want to order by the ids you specified then you can use "None".', 'related-categories-for-woocommerce' ) . ' ' .
+					sprintf(
+						/* Translators: %s: Link. */
+						__( '"Count" option will sort categories as when sorted by "Count" column in %s.', 'related-categories-for-woocommerce' ),
 						'<a href="' . admin_url( 'edit-tags.php?taxonomy=product_cat&post_type=product&orderby=count&order=desc' ) . '">' .
 							__( 'Products > Categories', 'related-categories-for-woocommerce' ) .
-						'</a>' ),
+						'</a>'
+					)
+				),
 				'default'  => 'name',
 				'type'     => 'select',
 				'options'  => array(

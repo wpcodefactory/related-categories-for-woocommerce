@@ -2,17 +2,33 @@
 /**
  * Related Categories for WooCommerce - Frontend Class
  *
- * @version 1.8.1
+ * @version 2.0.0
  * @since   1.7.0
  *
  * @author  Algoritmika Ltd
  */
 
-if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
+defined( 'ABSPATH' ) || exit;
 
 if ( ! class_exists( 'Alg_WC_Related_Categories_Frontend' ) ) :
 
 class Alg_WC_Related_Categories_Frontend {
+
+	/**
+	 * image_size.
+	 *
+	 * @version 2.0.0
+	 * @since   2.0.0
+	 */
+	public $image_size;
+
+	/**
+	 * placeholder_image.
+	 *
+	 * @version 2.0.0
+	 * @since   2.0.0
+	 */
+	public $placeholder_image;
 
 	/**
 	 * Constructor.
@@ -20,7 +36,7 @@ class Alg_WC_Related_Categories_Frontend {
 	 * @version 1.7.0
 	 * @since   1.7.0
 	 *
-	 * @todo    [maybe] move all shortcodes to a separate `class-alg-wc-related-categories-shortcodes.php` file?
+	 * @todo    (dev) move all shortcodes to a separate `class-alg-wc-related-categories-shortcodes.php` file?
 	 */
 	function __construct() {
 		if ( ! is_admin() ) {
@@ -41,13 +57,21 @@ class Alg_WC_Related_Categories_Frontend {
 	/**
 	 * get_option_with_args.
 	 *
-	 * @version 1.7.0
+	 * @version 2.0.0
 	 * @since   1.7.0
 	 *
-	 * @todo    [next] [!] (dev) maybe remove this? (i.e. as we have `override_options()` and `restore_options()` now)?
+	 * @todo    (dev) [!] maybe remove this? (i.e. as we have `override_options()` and `restore_options()` now)?
 	 */
 	function get_option_with_args( $type, $option, $args = array() ) {
-		return ( isset( $args[ $option ] ) ? $args[ $option ] : $this->get_core()->options[ $type ][ $option ] );
+		$value = ( $args[ $option ] ?? $this->get_core()->options[ $type ][ $option ] );
+		if ( 'template_header' === $option ) { // for proper translation loading
+			$value = str_replace(
+				'%title%',
+				__( 'Related categories', 'related-categories-for-woocommerce' ),
+				$value
+			);
+		}
+		return $value;
 	}
 
 	/**
@@ -56,8 +80,8 @@ class Alg_WC_Related_Categories_Frontend {
 	 * @version 1.8.0
 	 * @since   1.7.0
 	 *
-	 * @todo    [maybe] (feature) multiple positions/hooks (for both single and loop)
-	 * @todo    [maybe] (feature) Hide related *products*: only if there are related *categories* available for the product
+	 * @todo    (feature) multiple positions/hooks (for both single and loop)
+	 * @todo    (feature) Hide related *products*: only if there are related *categories* available for the product
 	 */
 	function init() {
 		// Output
@@ -86,7 +110,7 @@ class Alg_WC_Related_Categories_Frontend {
 	 * @version 1.8.0
 	 * @since   1.8.0
 	 *
-	 * @todo    [next] (dev) maybe move this to the `core`?
+	 * @todo    (dev) maybe move this to the `core`?
 	 */
 	function check_visibility_loop( $related_categories, $product_category_id, $relate_options ) {
 		if ( 'all' !== $this->get_core()->options['loop']['visibility'] ) {
@@ -108,7 +132,7 @@ class Alg_WC_Related_Categories_Frontend {
 	 * @version 1.7.0
 	 * @since   1.3.0
 	 *
-	 * @todo    [next] output inside standard subcategories (see `woocommerce_maybe_show_product_subcategories()`)
+	 * @todo    (dev) output inside standard subcategories (see `woocommerce_maybe_show_product_subcategories()`)
 	 */
 	function output_related_categories_loop( $product_category_id = false, $args = array() ) {
 		if ( ! $product_category_id && is_product_category() ) {
@@ -142,10 +166,10 @@ class Alg_WC_Related_Categories_Frontend {
 	 * @version 1.7.0
 	 * @since   1.0.0
 	 *
-	 * @todo    [next] `orderby`: `count`: does not include children (even though `$term->count` shows it with children)
-	 * @todo    [next] add placeholders, e.g. `%columns%`, `%limit%`?
-	 * @todo    [next] add more `orderby` options?
-	 * @todo    [maybe] rethink `$limit` default `4`?
+	 * @todo    (dev) `orderby`: `count`: does not include children (even though `$term->count` shows it with children)
+	 * @todo    (dev) add placeholders, e.g. `%columns%`, `%limit%`?
+	 * @todo    (dev) add more `orderby` options?
+	 * @todo    (dev) rethink `$limit` default `4`?
 	 */
 	function output_related_categories( $related_categories, $type, $args = array() ) {
 		if ( $related_categories ) {
@@ -167,8 +191,8 @@ class Alg_WC_Related_Categories_Frontend {
 	 * @version 1.8.0
 	 * @since   1.8.0
 	 *
-	 * @todo    [next] (dev) via filter?
-	 * @todo    [next] [!] (feature) `relate_current_always_first`: `single`
+	 * @todo    (dev) via filter?
+	 * @todo    (feature) [!] `relate_current_always_first`: `single`
 	 */
 	function prepare_terms( $terms, $type, $args = array() ) {
 		if ( 'loop' === $type ) {
@@ -202,13 +226,13 @@ class Alg_WC_Related_Categories_Frontend {
 	 * @see     https://developer.wordpress.org/reference/classes/wp_term_query/__construct/
 	 * @see     https://developer.wordpress.org/reference/classes/wp_term/
 	 *
-	 * @todo    [next] (dev) check `WC_Shortcodes::product_categories()` for "... workaround WP bug with parents/pad counts..."
-	 * @todo    [next] (dev) `template_custom`: `do_shortcode()`?
-	 * @todo    [next] (dev) cache: call `wc_placeholder_img_src()` only once?
-	 * @todo    [next] (dev) `pad_counts`: no effect?
-	 * @todo    [maybe] (dev) use `filter_var( ..., FILTER_VALIDATE_BOOLEAN )` everywhere?
-	 * @todo    [maybe] (dev) merge "Maybe random orderby" from here with same in `output_related_categories_default()`?
-	 * @todo    [maybe] (feature) add more placeholders, e.g. `$term->parent`?
+	 * @todo    (dev) check `WC_Shortcodes::product_categories()` for "... workaround WP bug with parents/pad counts..."
+	 * @todo    (dev) `template_custom`: `do_shortcode()`?
+	 * @todo    (dev) cache: call `wc_placeholder_img_src()` only once?
+	 * @todo    (dev) `pad_counts`: no effect?
+	 * @todo    (dev) use `filter_var( ..., FILTER_VALIDATE_BOOLEAN )` everywhere?
+	 * @todo    (dev) merge "Maybe random orderby" from here with same in `output_related_categories_default()`?
+	 * @todo    (feature) add more placeholders, e.g. `$term->parent`?
 	 */
 	function output_related_categories_custom( $related_categories, $type, $args = array() ) {
 		// Maybe random orderby
@@ -281,8 +305,8 @@ class Alg_WC_Related_Categories_Frontend {
 	 * @see     https://developer.wordpress.org/reference/functions/get_terms/
 	 * @see     https://developer.wordpress.org/reference/classes/wp_term_query/__construct/
 	 *
-	 * @todo    [maybe] `$related_categories = array_slice( $related_categories, 0, $limit );` (after `shuffle()`)?
-	 * @todo    [maybe] use `parent` shortcode attribute?
+	 * @todo    (dev) `$related_categories = array_slice( $related_categories, 0, $limit );` (after `shuffle()`)?
+	 * @todo    (dev) use `parent` shortcode attribute?
 	 */
 	function output_related_categories_default( $related_categories, $type, $args = array() ) {
 		// Maybe random orderby
@@ -341,7 +365,7 @@ class Alg_WC_Related_Categories_Frontend {
 	 * @version 1.7.0
 	 * @since   1.5.0
 	 *
-	 * @todo    [next] check if `image_size` exists in `get_intermediate_image_sizes()` (same in `image_size_single()`)
+	 * @todo    (dev) check if `image_size` exists in `get_intermediate_image_sizes()` (same in `image_size_single()`)
 	 */
 	function image_size_loop( $image_size ) {
 		return ( ! empty( $this->image_size['loop'] ) ? $this->image_size['loop'] : $image_size );
@@ -383,7 +407,7 @@ class Alg_WC_Related_Categories_Frontend {
 	 * @version 1.7.0
 	 * @since   1.5.0
 	 *
-	 * @todo    [next] cache: `$this->placeholder_img_src['loop']` (also `$this->placeholder_img_src['single']`)?
+	 * @todo    (dev) cache: `$this->placeholder_img_src['loop']` (also `$this->placeholder_img_src['single']`)?
 	 */
 	function placeholder_img_src_loop( $src ) {
 		return $this->placeholder_img_src( $src, $this->placeholder_image['loop'], $this->image_size['loop'] );
@@ -405,8 +429,8 @@ class Alg_WC_Related_Categories_Frontend {
 	 * @version 1.7.0
 	 * @since   1.3.2
 	 *
-	 * @todo    [next] (feature) customizable `relate_options`? (same for loop)
-	 * @todo    [next] (dev) add `[alg_wc_related_categories type="single"]` (and `[alg_wc_related_categories type="loop"]`) shortcodes?
+	 * @todo    (feature) customizable `relate_options`? (same for loop)
+	 * @todo    (dev) add `[alg_wc_related_categories type="single"]` (and `[alg_wc_related_categories type="loop"]`) shortcodes?
 	 */
 	function output_related_categories_single_shortcode( $atts, $content = '' ) {
 

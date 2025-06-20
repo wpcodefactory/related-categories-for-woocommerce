@@ -8,7 +8,7 @@
  * @author  Algoritmika Ltd
  */
 
-if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
+defined( 'ABSPATH' ) || exit;
 
 if ( ! class_exists( 'Alg_WC_Related_Categories_Transients' ) ) :
 
@@ -70,7 +70,7 @@ class Alg_WC_Related_Categories_Transients {
 	 * @version 1.8.0
 	 * @since   1.8.0
 	 *
-	 * @todo    [maybe] (dev) remove `add_message()`?
+	 * @todo    (dev) remove `add_message()`?
 	 */
 	function maybe_delete_all_after_save_settings() {
 		global $current_section;
@@ -91,7 +91,7 @@ class Alg_WC_Related_Categories_Transients {
 	 * @see     https://developer.wordpress.org/reference/functions/delete_transient/
 	 * @see     https://wordpress.stackexchange.com/questions/73163/using-a-wildcard-with-delete-transient
 	 *
-	 * @todo    [next] [!] (dev) fix: when using memcache (or similar), transients are not stored in the database
+	 * @todo    (dev) [!] fix: when using memcache (or similar), transients are not stored in the database
 	 */
 	function delete_all() {
 		global $wpdb;

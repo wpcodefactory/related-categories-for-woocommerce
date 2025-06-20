@@ -22,4 +22,4 @@ if (PHP_VERSION_ID < 50600) {
 
 require_once __DIR__ . '/composer/autoload_real.php';
 
-return ComposerAutoloaderInitdacce76bb4a23ba9bf6d3cd38fd47126::getLoader();
+return ComposerAutoloaderInitWPFactoryRelatedCategoriesForWooCommerce::getLoader();

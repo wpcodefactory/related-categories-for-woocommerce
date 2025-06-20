@@ -1,9 +1,9 @@
 === Related Categories for WooCommerce ===
-Contributors: wpcodefactory, omardabbas, karzin, anbinder, algoritmika, kousikmukherjeeli
+Contributors: wpcodefactory, algoritmika, anbinder, karzin, omardabbas
 Tags: woocommerce, related, categories, related categories, woo commerce
 Requires at least: 4.7
 Tested up to: 6.8
-Stable tag: 1.9.9
+Stable tag: 2.0.0
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -13,7 +13,7 @@ Add "Related categories" section to single product and/or shop pages in WooComme
 
 **Related Categories for WooCommerce** plugin lets you add "Related categories" section (similar to the standard "Related products" section) to the single product and/or shop (i.e. archives) pages in WooCommerce.
 
-### &#9989; Main Features ###
+### ✅ Main Features ###
 
 * Automatically add "related categories" section to the **single product** pages and/or to **shop** pages.
 * Set categories **limit** (i.e. number of categories).
@@ -25,7 +25,7 @@ Add "Related categories" section to single product and/or shop pages in WooComme
 * Optionally display related categories with a **widget** and/or with a **shortcode**.
 * And more...
 
-### &#127942; Premium Version ###
+### 🏆 Premium Version ###
 
 With [Related Categories for WooCommerce Pro](https://wpfactory.com/item/related-categories-for-woocommerce/) you can **manually relate** categories on:
 
@@ -34,7 +34,7 @@ With [Related Categories for WooCommerce Pro](https://wpfactory.com/item/related
 * per product **tag** basis, and/or
 * per product **custom taxonomy** (e.g. product brands) basis.
 
-### &#128472; Feedback ###
+### 🗘 Feedback ###
 
 * We are open to your suggestions and feedback. Thank you for using or trying out one of our plugins!
 * [Visit plugin site](https://wpfactory.com/item/related-categories-for-woocommerce/).
@@ -43,7 +43,7 @@ With [Related Categories for WooCommerce Pro](https://wpfactory.com/item/related
 
 1. Upload the entire plugin folder to the `/wp-content/plugins/` directory.
 2. Activate the plugin through the "Plugins" menu in WordPress.
-3. Start by visiting plugin settings at "WooCommerce > Settings > Related Categories".
+3. Start by visiting plugin settings at "WPFactory > Related Categories".
 
 == Frequently Asked Questions ==
 
@@ -57,12 +57,20 @@ Yes, for WPML and Polylang translations, you can use our `[alg_wc_related_catego
 
 == Changelog ==
 
+= 2.0.0 - 20/06/2025 =
+* Fix - Translation loading fixed.
+* Fix - Deprecated "Creation of dynamic property".
+* Dev - WPFactory Key Manager - Move to the `init` hook.
+* Dev - Security - Escape output.
+* Dev - Code refactoring.
+* Dev - Coding standards improved.
+
 = 1.9.9 - 18/06/2025 =
 * Fix - Meta boxes were missing.
 * Dev - Improved WPFactory menu.
 
 = 1.9.8 - 13/06/2025 =
-* Fix - Deprecated 'Creation of dynamic property'.
+* Fix - Deprecated "Creation of dynamic property".
 * Dev - Added key manager.
 * Dev - Added WPFactory menu.
 * WC tested up to: 9.9.
