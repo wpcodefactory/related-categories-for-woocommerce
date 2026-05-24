@@ -3,13 +3,13 @@
 Plugin Name: Related Categories for WooCommerce
 Plugin URI: https://wpfactory.com/item/related-categories-for-woocommerce/
 Description: Add "Related categories" section to single product and/or shop pages in WooCommerce.
-Version: 2.0.1
+Version: 2.0.2
 Author: WPFactory
 Author URI: https://wpfactory.com
 Requires at least: 4.7
 Text Domain: related-categories-for-woocommerce
 Domain Path: /langs
-WC tested up to: 10.1
+WC tested up to: 10.7
 Requires Plugins: woocommerce
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -37,7 +37,7 @@ if ( 'related-categories-for-woocommerce.php' === basename( __FILE__ ) ) {
 	}
 }
 
-defined( 'ALG_WC_RELATED_CATEGORIES_VERSION' ) || define( 'ALG_WC_RELATED_CATEGORIES_VERSION', '2.0.1' );
+defined( 'ALG_WC_RELATED_CATEGORIES_VERSION' ) || define( 'ALG_WC_RELATED_CATEGORIES_VERSION', '2.0.2' );
 
 defined( 'ALG_WC_RELATED_CATEGORIES_FILE' ) || define( 'ALG_WC_RELATED_CATEGORIES_FILE', __FILE__ );
 
