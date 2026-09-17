@@ -2,8 +2,8 @@
 Contributors: wpcodefactory, anbinder, karzin, omardabbas
 Tags: woocommerce, related, categories, related categories, woo commerce
 Requires at least: 4.7
-Tested up to: 7.0
-Stable tag: 2.0.2
+Tested up to: 7.1
+Stable tag: 2.1.0
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -11,17 +11,17 @@ Add "Related categories" section to single product and/or shop pages in WooComme
 
 == Description ==
 
-**Related Categories for WooCommerce** plugin lets you add "Related categories" section (similar to the standard "Related products" section) to the single product and/or shop (i.e. archives) pages in WooCommerce.
+**Related Categories for WooCommerce** plugin lets you add "Related categories" section (similar to the standard "Related products" section) to the single product and/or shop (i.e., archives) pages in WooCommerce.
 
 ### ✅ Main Features ###
 
 * Automatically add "related categories" section to the **single product** pages and/or to **shop** pages.
-* Set categories **limit** (i.e. number of categories).
+* Set categories **limit** (i.e., number of categories).
 * Set number of **columns**.
 * **Sort** categories by name, ID, random, count, etc.
 * **Automatically relate categories** by siblings, parents, children, etc.
 * Set **position** for the "related categories" section.
-* **Customize templates**, e.g. set header, footer and item HTML templates.
+* **Customize templates**, e.g., set header, footer and item HTML templates.
 * Optionally display related categories with a **widget** and/or with a **shortcode**.
 * And more...
 
@@ -32,7 +32,7 @@ With [Related Categories for WooCommerce Pro](https://wpfactory.com/item/related
 * per **product** basis,
 * per product **category** basis,
 * per product **tag** basis, and/or
-* per product **custom taxonomy** (e.g. product brands) basis.
+* per product **custom taxonomy** (e.g., product brands) basis.
 
 ### 🗘 Feedback ###
 
@@ -57,9 +57,22 @@ Yes, for WPML and Polylang translations, you can use our `[alg_wc_related_catego
 
 == Changelog ==
 
+= 2.1.0 - 17/09/2026 =
+* Dev - Output escaped.
+* Dev - Input sanitized.
+* Dev - Nonces added.
+* Dev - User capability checks added.
+* Dev - Code refactoring.
+* Dev - Coding standards improved.
+* Dev - WPFactory Admin Menu - Library updated (to v1.1.2).
+* Dev - WPFactory Cross-Selling - Library updated (to v1.1.5).
+* Dev - WPFactory Key Manager - Library updated (to v1.1.1).
+* WC tested up to: 11.1.
+* Tested up to: 7.1.
+
 = 2.0.2 - 24/05/2026 =
-* Tested up to: 7.0.
 * WC tested up to: 10.7.
+* Tested up to: 7.0.
 
 = 2.0.1 - 02/09/2025 =
 * WC tested up to: 10.1.
@@ -107,8 +120,8 @@ Yes, for WPML and Polylang translations, you can use our `[alg_wc_related_catego
 
 = 1.9.2 - 13/04/2022 =
 * Dev - Single - Position Options - "Before single product" and "After single product" positions added.
-* Tested up to: 5.9.
 * WC tested up to: 6.4.
+* Tested up to: 5.9.
 
 = 1.9.1 - 15/11/2021 =
 * Dev - Developers - `alg_wc_related_categories_single_product_category_ids` filter added.
@@ -168,8 +181,8 @@ Yes, for WPML and Polylang translations, you can use our `[alg_wc_related_catego
 * Dev - General Options - Order by - "Count" option added.
 * Dev - Image Options - "Image size" option added.
 * Dev - Image Options - "Placeholder image" option added.
-* Tested up to: 5.6.
 * WC tested up to: 4.8.
+* Tested up to: 5.6.
 
 = 1.4.0 - 17/04/2020 =
 * Fix - Settings - Per product - Bug (when empty "Categories" value is not being saved) fixed.
