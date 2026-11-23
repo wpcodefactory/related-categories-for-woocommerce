@@ -2,16 +2,16 @@
 # This file is distributed under the GNU General Public License v3.0.
 msgid ""
 msgstr ""
-"Project-Id-Version: Related Categories for WooCommerce 2.1.0\n"
+"Project-Id-Version: Related Categories for WooCommerce 2.1.1\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/related-categories-for-woocommerce\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-09-17T14:23:34+00:00\n"
+"POT-Creation-Date: 2026-11-23T11:36:56+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"X-Generator: WP-CLI 2.11.0\n"
+"X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: related-categories-for-woocommerce\n"
 
 #. Plugin Name of the plugin
@@ -99,6 +99,7 @@ msgstr ""
 
 #. Translators: %1$s: Option name, %2$s: Example.
 #: includes/class-alg-wc-related-categories-widget.php:153
+#, php-format
 msgid "You can use this in the \"%1$s\" option, e.g.: %2$s."
 msgstr ""
 
@@ -169,6 +170,7 @@ msgstr ""
 
 #. Translators: %s: Link.
 #: includes/class-alg-wc-related-categories-widget.php:178
+#, php-format
 msgid "\"Count\" option will sort categories as when sorted by \"Count\" column in %s."
 msgstr ""
 
@@ -455,6 +457,7 @@ msgstr ""
 
 #. Translators: %1$s: Settings name, %2$s: Settings name, %3$s: Settings name, %4$s: Settings name.
 #: includes/settings/class-alg-wc-related-categories-settings-advanced.php:59
+#, php-format
 msgid "Affects \"%1$s\", \"%2$s\", \"%3$s\" and \"%4$s\" settings."
 msgstr ""
 
@@ -504,11 +507,13 @@ msgstr ""
 
 #. Translators: %s: Section title.
 #: includes/settings/class-alg-wc-related-categories-settings-general.php:110
+#, php-format
 msgid "%s Options"
 msgstr ""
 
 #. Translators: %s: Section title.
 #: includes/settings/class-alg-wc-related-categories-settings-general.php:119
+#, php-format
 msgid "Display on %s"
 msgstr ""
 
@@ -523,6 +528,7 @@ msgstr ""
 
 #. Translators: %s: Link.
 #: includes/settings/class-alg-wc-related-categories-settings-general.php:156
+#, php-format
 msgid "\"Count\" option will sort categories as when sorted by the \"Count\" column in %s."
 msgstr ""
 
@@ -532,6 +538,7 @@ msgstr ""
 
 #. Translators: %s: Template type.
 #: includes/settings/class-alg-wc-related-categories-settings-general.php:311
+#, php-format
 msgid "Works for the \"%s\" template type only."
 msgstr ""
 
@@ -555,6 +562,7 @@ msgstr ""
 
 #. Translators: %s: Link.
 #: includes/settings/class-alg-wc-related-categories-settings-general.php:350
+#, php-format
 msgid "It will add \"Related categories\" settings section to each category edit page (in %s)."
 msgstr ""
 
@@ -568,6 +576,7 @@ msgstr ""
 
 #. Translators: %s: Link.
 #: includes/settings/class-alg-wc-related-categories-settings-general.php:368
+#, php-format
 msgid "It will add \"Related categories\" settings section to each tag edit page (in %s)."
 msgstr ""
 
@@ -585,6 +594,7 @@ msgstr ""
 
 #. Translators: %s: Example.
 #: includes/settings/class-alg-wc-related-categories-settings-general.php:386
+#, php-format
 msgid "Set as comma separated taxonomy slug list, e.g.: %s."
 msgstr ""
 
@@ -594,6 +604,7 @@ msgstr ""
 
 #. Translators: %s: Link.
 #: includes/settings/class-alg-wc-related-categories-settings-general.php:408
+#, php-format
 msgid "It will add \"Related categories\" meta box to each product edit page (in %s)."
 msgstr ""
 
@@ -652,6 +663,7 @@ msgstr ""
 
 #. Translators: %s: Shortcode name.
 #: includes/settings/class-alg-wc-related-categories-settings-general.php:486
+#, php-format
 msgid "You can also use the %s shortcode to output the related categories."
 msgstr ""
 
@@ -661,6 +673,7 @@ msgstr ""
 
 #. Translators: %s: Shortcode name.
 #: includes/settings/class-alg-wc-related-categories-settings-general.php:497
+#, php-format
 msgid "\"Disable\" position can be set if you are going to use %s shortcode or widget instead."
 msgstr ""
 
@@ -674,6 +687,7 @@ msgstr ""
 
 #. Translators: %1$s: Widget name, %2$s: Link.
 #: includes/settings/class-alg-wc-related-categories-settings-general.php:516
+#, php-format
 msgid "This will add \"%1$s\" widget to \"%2$s\"."
 msgstr ""
 
@@ -687,6 +701,7 @@ msgstr ""
 
 #. Translators: %s: Shortcode name.
 #: includes/settings/class-alg-wc-related-categories-settings-general.php:574
+#, php-format
 msgid "You can use HTML and/or shortcodes here, e.g., %s."
 msgstr ""
 
@@ -708,17 +723,20 @@ msgstr ""
 #. Translators: %1$s: Option name, %2$s: Option value.
 #: includes/settings/class-alg-wc-related-categories-settings-general.php:610
 #: includes/settings/class-alg-wc-related-categories-settings-general.php:692
+#, php-format
 msgid "Ignored, unless \"%1$s\" option is set to \"%2$s\"."
 msgstr ""
 
 #. Translators: %s: Example.
 #: includes/settings/class-alg-wc-related-categories-settings-general.php:617
 #: includes/settings/class-alg-wc-related-categories-settings-general.php:637
+#, php-format
 msgid "E.g.: %s"
 msgstr ""
 
 #. Translators: %s: Placeholder list.
 #: includes/settings/class-alg-wc-related-categories-settings-general.php:624
+#, php-format
 msgid "Available placeholders: %s."
 msgstr ""
 
